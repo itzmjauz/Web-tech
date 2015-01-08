@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!-- Assignment 1 Peter Atkinson - 2555678 Antoni Stevenet - 2557398 -->
+<html>
+
+<head>
+  <title>Assignment 1 - Web Technology</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="Print.css" />
+</head>
+
+<body>
+  <h1>Assignment 1 - Web Technology</h1>
+  <h2>Peter Atkinson (2555678) &amp; Antoni Stevenet (2557398)</h2>
+  <nav>
+    <a href="#lab1">Lab 1</a>
+    <a href="#lab2">Lab 2</a>
+    <a href="#table">Table</a>
+  </nav>
+  <section id="lab1">
+    <h2>Lab 1</h2>
+    <h3>Note</h3>
+    <p>We're not using The background-image plus related properties because that would be illogical since we're already using a standard background color</p>
+    <p>We're not using the list-style-image properties for the same reason, and since we'd have to ship images together with the file, we have however some image properties set up in the css in case any images get added</p>
+    <h3>Question 1</h3>
+    <p>On the first line is the document type. Then inside the &lt;head&gt; tag there are &lt;meta&gt; tags specifying content type, generator, creation date, and changed date information. Then there is a &lt;style&gt; tag, empty title. The &lt;body&gt;
+      tag specifies language and direction (left-to-right in this case). The &lt;p&gt; tag is styled with no margin and 100% line height, which overrides &lt;p&gt;&apos;s previous style defined in the &lt;head&gt; tag.</p>
+    <h3>Question 2</h3>
+    <p>The Internet is a network of computer networks. The web is a way of sharing and consuming content using the internet (source:
+      <a href="http://www.w3.org/Help/#webinternet">http://www.w3.org/Help/#webinternet</a>).</p>
+    <h3>Question 3</h3>
+    <dl>
+      <dt>HTTP</dt>
+      <dd>HTTP stands for HyperText Transfer Protocol. It is used for communication between web client and web server. It uses port 80. Source:
+        <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
+      </dd>
+      <dt>SSH</dt>
+      <dd>SSH stands for Secure SHell. It is used for securely send commands to a remote computer. It uses port 22. Source:
+        <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
+      </dd>
+      <dt>FTP</dt>
+      <dd>FTP stands for File Transfer Protocol. It is used to transferring files between networked computers. It uses port 21. Source:
+        <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
+      </dd>
+    </dl>
+    <h3>Question 4</h3>
+    <p>WHATWG is focused on developing HTML5 for commercial applications and the W3C is focused on maximizing its openness and accessibility.</p>
+    <h3>Question 5</h3>
+    <p>Tim Berners-Lee created HTML (HyperText Markup Language), URIs (Uniform Resource Identifiers) and HTTP (HyperText Transfer Protocol) in order to build the World Wide Web on top of the already existing Internet infrastructure.</p>
+    <h3>Question 6</h3>
+    <p>&lt;strong&gt; is preferrable in this case. &lt;b&gt; is meant to draw attention without changing the mood of the sentence and strong is meant to convery importance or urgency (source:</p>
+    <a href="https://html.spec.whatwg.org/multipage/semantics.html">https://html.spec.whatwg.org/multipage/semantics.html</a>). For example, compare
+    <blockquote>&lt;strong&gt;
+      <strong>Do not</strong>&lt;&#47;strong&gt; eat that; it's poisonous.</blockquote>to
+    <blockquote>&lt;b&gt;
+      <b>This</b>&lt;&#47;b&gt;, on the other hand, is not poisonous.</blockquote>
+    <p>Another pair of similar HTML constructs are &lt;em&gt; and &lt;i&gt;. &lt;em&gt; is meant to emphasize the highlighted text and &lt;i&gt; is meant to change the mood of it, loosely speaking.</p>
+    <h3>Question 7</h3>
+    <p>Divs are block elements and spans are inline elements. This means that on a webpage there will be a line break after a div and not after a span. They are similar in that they both denote sections of content (source:
+      <a href="http://www.1keydata.com/css-tutorial/div-span.php">http://www.1keydata.com/css-tutorial/div-span.php</a>).</p>
+    <h3>Question 8</h3>
+    <h3>Pros</h3>
+    <ul>
+      <li>Ability to keep part of page static while changing another part</li>
+      <li>Can reduce bandwidth and server load</li>
+    </ul>
+    <h3>Cons</h3>
+    <ul>
+      <li>Search engines have problems processing them</li>
+      <li>URL doesn't change when you browse a site that uses frames</li>
+      <li>Printing problems</li>
+    </ul>
+    <h3>Question 9</h3>
+    <ul id="stylelist">
+      <li>Makes changing the layout of a site a simple task.</li>
+      <li>Allows the content to be separated from the style (helpful for people with disabilities or text-based browsers).</li>
+      <li>Reduces html filesize and therefore bandwidth requirements.</li>
+      <li>Consistent navigation layout without requiring the use of frames</li>
+      <li>Allows search engines to evaluate your site more effectively</li>
+      <li>Readable and easy to work with</li>
+      <li>Browsers cache CSS files which increases speed for end users.</li>
+    </ul>
+    <span>(source:
+                <a href="http://www.vordweb.co.uk/css/advantages-of-css.htm">http://www.vordweb.co.uk/css/advantages-of-css.htm</a>).</span>
+    <h3>Question 10</h3>
+    <p>Expectation: makes it bold</p>
+    <p>Reality: doesn't make a difference</p>
+    <h3>Question 11</h3>
+    <table id="firefoxvschrome">
+      <caption>Firefox vs. Chrome</caption>
+      <tr>
+        <th class="firefoxcolumn">Firefox</th>
+        <th class="chromecolumn">Chrome</th>
+        <th class="sourcecolumn">Sources</th>
+      </tr>
+      <tr>
+        <td class="firefoxcolumn">Open source</td>
+        <td class="chromecolumn">Not open source (though based on open source browser Chromium)</td>
+        <td class="sourcecolumn">
+          <a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="firefoxcolumn">Uses SpiderMonkey JavaScript engine</td>
+        <td class="chromecolumn">Uses V8 JavaScript engine</td>
+        <td class="sourcecolumn">
+          <a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="firefoxcolumn">15.6% Web Browser Market Share</td>
+        <td class="chromecolumn">42.5% Web Browser Market Share</td>
+        <td class="sourcecolumn">
+          <a href="http://www.w3counter.com/globalstats.php?year=2014&amp;month=12">W3Counter</a>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section id="lab2">
+    <h2>Lab 2</h2>
+  </section>
+  <section id="table">
+    <h2>Table</h2>
+    <form id="form" action="http://wt.ops.few.vu.nl/api/1c803e2a" method="post">
+      <table id="tabled">
+        <caption>Inventory table</caption>
+        <tr id="boldlist">
+          <th>Banana</th>
+          <th>Dishwasher</th>
+          <th>Parachute</th>
+          <th>Chair</th>
+          <th>
+            <input type="text" name="name" required>
+          </th>
+        </tr>
+        <tr>
+          <td>Fruit</td>
+          <td>Appliance</td>
+          <td>Fun</td>
+          <td>Furniture</td>
+          <td>
+            <input type="text" name="category" required>
+          </td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>2</td>
+          <td>
+            <input type="number" name="amount" required>
+          </td>
+        </tr>
+        <tr>
+          <td>Amsterdam</td>
+          <td>Den Haag</td>
+          <td>Groningen</td>
+          <td>Den Haag</td>
+          <td>
+            <input type="text" name="location" required>
+          </td>
+        </tr>
+        <tr>
+          <td>2011-11-11</td>
+          <td>2012-12-12</td>
+          <td>2011-11-11</td>
+          <td>2012-12-12</td>
+          <td>
+            <input type="date" name="date" required>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="5">
+            <input id="button" type="submit" value="Submit">
+          </th>
+        </tr>
+      </table>
+    </form>
+  </section>
+</body>
+<script src="main.js" type="text/javascript"></script>
+
+</html>

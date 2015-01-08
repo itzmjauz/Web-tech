@@ -1,0 +1,116 @@
+/* appendix 2
+ * Antoni Stevenet - 2557398
+ * Peter Atkinson - 2555678
+ * */
+
+@page {
+  margin: 3cm;
+}
+@media print {
+  footer {
+    page-break-after: always;
+    page-break-before: always;
+  }
+  p {
+    orphans: 2;
+    widows: 2;
+    /* default */
+  }
+}
+body {
+  background-color: #b0c4de;
+}
+table {
+  margin: auto;
+  color: blue;
+  font-size: 120%;
+  font-family: "Helvetica";
+  /* everyone's favorite */
+}
+#tabled {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+p,
+p blockquote {
+  border: 5px solid red;
+}
+.randomtext {
+  text-transform: uppercase;
+}
+.randomtext2 {
+  text-align: right;
+}
+.randomtext3 {
+  text-decoration: underline;
+}
+/* Fill these in later */
+
+a:link {
+  color: #FF0000;
+}
+a:visited {
+  color: #00FF00;
+}
+a:hover {
+  color: #00FFFF;
+}
+a:active {
+  color: #0000FF;
+}
+input:focus {
+  background-color: yellow;
+}
+.firefoxcolumn {
+  text-align: left;
+}
+.chromecolumn,
+.sourcecolumn {
+  text-align: right;
+}
+#boldlist {
+  font-weight: bold;
+  text-align: center;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-color: black;
+  border-style: solid;
+  border-spacing: 2px;
+  border-width: 3px;
+  caption-side: bottom;
+}
+#image {
+  float: left;
+  vertical-align: text-top;
+}
+input[type="submit"] {
+  margin: 0 auto;
+  width: 100%;
+}
+/* Fill these in later */
+/* appendix 3 */
+
+p {
+  text-indent: 50px;
+}
+#p1 {
+  text-indent: 0px;
+}
+.randomtext {
+  font-variant: small-caps;
+}
+#button:hover {
+  font-weight: bold;
+}
+#stylelist {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+.note::before {
+  content: 'Note:';
+}
