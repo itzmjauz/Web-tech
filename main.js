@@ -1,3 +1,5 @@
+//semicolons are for pussies
+
 $("form").submit(function(event) {
   event.preventDefault()
   var formObj = $(this)
