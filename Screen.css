@@ -88,9 +88,10 @@ td {
   float: left;
   vertical-align: text-top;
 }
-input[type="submit"] {
+input[type="submit"],
+input[type="reset"] {
   margin: 0 auto;
-  width: 100%;
+  width: 49%;
 }
 /* Fill these in later */
 /* appendix 3 */
