@@ -3,117 +3,116 @@
  * Peter Atkinson - 2555678
  * */
 
+@media screen and (max-height: 480px) and (max-width: 360px) {
+    body {
+        background-color: lightblue;
+    }
+}
 @page {
-  margin: 3cm;
+    margin: 3cm;
 }
 @media print {
-  footer {
-    page-break-after: always;
-    page-break-before: always;
-  }
-  p {
-    orphans: 2;
-    widows: 2;
-    /* default */
-  }
+    footer {
+        page-break-after: always;
+        page-break-before: always;
+    }
+    p {
+        orphans: 2;
+        widows: 2;
+        /* default */
+    }
 }
 body {
-  background-color: #b0c4de;
+    background-color: #b0c4de;
 }
 table {
-  margin: auto;
-  color: blue;
-  font-size: 120%;
-  font-family: "Helvetica";
-  /* everyone's favorite */
+    margin: auto;
+    color: blue;
+    font-size: 120%;
+    font-family:"Helvetica";
+    /* everyone's favorite */
 }
 #tabled {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 2px;
-  margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
-p,
-p blockquote {
-  border: 5px solid red;
+p, p blockquote {
+    border: 5px solid red;
 }
 .randomtext {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 .randomtext2 {
-  text-align: right;
+    text-align: right;
 }
 .randomtext3 {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 /* Fill these in later */
-
-a:link {
-  color: #FF0000;
+ a:link {
+    color: #FF0000;
 }
 a:visited {
-  color: #00FF00;
+    color: #00FF00;
 }
 a:hover {
-  color: #00FFFF;
+    color: #00FFFF;
 }
 a:active {
-  color: #0000FF;
+    color: #0000FF;
 }
 input:focus {
-  background-color: yellow;
+    background-color: yellow;
 }
 .firefoxcolumn {
-  text-align: left;
+    text-align: left;
 }
-.chromecolumn,
-.sourcecolumn {
-  text-align: right;
+.chromecolumn, .sourcecolumn {
+    text-align: right;
 }
 #boldlist {
-  font-weight: bold;
-  text-align: center;
+    font-weight: bold;
+    text-align: center;
 }
-table,
-th,
-td {
-  border: 1px solid black;
-  border-color: black;
-  border-style: solid;
-  border-spacing: 2px;
-  border-width: 3px;
-  caption-side: bottom;
+table, th, td {
+    border: 1px solid black;
+    border-color: black;
+    border-style: solid;
+    border-spacing: 2px;
+    border-width: 3px;
+    caption-side: bottom;
 }
 #image {
-  float: left;
-  vertical-align: text-top;
-  max-width: 100%;
-  max-height: 100%;
+    float: left;
+    vertical-align: text-top;
+    max-width: 100%;
+    max-height: 100%;
 }
-input[type="submit"],
-input[type="reset"] {
-  margin: 0 auto;
-  width: 49%;
+input[type="submit"], input[type="reset"] {
+    margin: 0 auto;
+    width: 49%;
 }
 /* Fill these in later */
-/* appendix 3 */
 
-p {
-  text-indent: 50px;
+/* appendix 3 */
+ p {
+    text-indent: 50px;
 }
 #p1 {
-  text-indent: 0px;
+    text-indent: 0px;
 }
 .randomtext {
-  font-variant: small-caps;
+    font-variant: small-caps;
 }
 #button:hover {
-  font-weight: bold;
+    font-weight: bold;
 }
 #stylelist {
-  list-style-type: circle;
-  list-style-position: inside;
+    list-style-type: circle;
+    list-style-position: inside;
 }
 .note::before {
-  content: 'Note:';
+    content:'Note:';
 }
