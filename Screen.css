@@ -1,35 +1,22 @@
 /* appendix 2
- * Antoni Stevenet - 2557398
- * Peter Atkinson - 2555678
- * */
- body {
+* Antoni Stevenet - 2557398
+* Peter Atkinson - 2555678
+* */
+
+body {
     background-color: #b0c4de;
-}
-@media screen and(max-height: 480px) and(max-width: 360px) {
-    body {
-        background-color: lightblue;
-    }
-}
-@page {
-    margin: 3cm;
-}
-@media print {
-    footer {
-        page-break-after: always;
-        page-break-before: always;
-    }
-    p {
-        orphans: 2;
-        widows: 2;
-        /* default */
-    }
 }
 table {
     margin: auto;
     color: blue;
     font-size: 120%;
-    font-family:"Helvetica";
-    /* everyone's favorite */
+    font-family: "Comic Sans MS"; /* everyone's favorite */
+    width: 90%;
+}
+code.toolong,
+td,
+th {
+    word-break: break-all;
 }
 #tabled {
     margin-top: 2px;
@@ -37,20 +24,41 @@ table {
     margin-left: 2px;
     margin-right: 2px;
 }
-p, p blockquote {
+section,
+blockquote {
     border: 5px solid red;
+    margin: 5px;
+    padding: 5px
 }
-.randomtext {
-    text-transform: uppercase;
+
+ul.l1q9 {
+    list-style-type: upper-roman;
+    list-style-position: outside; /* not noticeable on our current page, but here it is */
 }
-.randomtext2 {
+
+ul ul.pro {
+    list-style-image: url('http://i.imgur.com/BYRGKOh.png?1');
+}
+ul ul.con {
+    list-style: square outside url('http://i.imgur.com/1MqYJLX.png?1');
+    /*not consistent with the ul ul.pro list-style but this way we use all the list-style constructs */
+}
+pre {
+    font-variant: small-caps;
+    font-size: 5vw;
+}
+.textstuff{
     text-align: right;
-}
-.randomtext3 {
+    text-transform: uppercase;
     text-decoration: underline;
+    font: italic bold Georgia, serif;
+    font-size: 15px; /* could have been included above between bold and Georgia but this way we can use the "font-size" construct with an absolute value */
 }
-/* Fill these in later */
- a:link {
+.othertextstuff {
+    font-style: italic;
+}
+
+a:link {
     color: #FF0000;
 }
 a:visited {
@@ -63,55 +71,88 @@ a:active {
     color: #0000FF;
 }
 input:focus {
-    background-color: yellow;
+    background: yellow;
+}
+input {
+    width: 70%;
 }
 .firefoxcolumn {
     text-align: left;
 }
-.chromecolumn, .sourcecolumn {
+.chromecolumn,
+.sourcecolumn {
     text-align: right;
 }
 #boldlist {
     font-weight: bold;
     text-align: center;
 }
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
     border-color: black;
     border-style: solid;
     border-spacing: 2px;
     border-width: 3px;
-    caption-side: bottom;
+    caption-side: top;
 }
-#image {
+
+img {
+    height: auto;
+    width:100%;
+    max-width: 500px;
     float: left;
     vertical-align: text-top;
-    max-width: 100%;
-    max-height: 100%;
 }
-input[type="submit"], input[type="reset"] {
+input[type="submit"],
+input[type="reset"] {
     margin: 0 auto;
     width: 49%;
 }
-/* Fill these in later */
 
-/* appendix 3 */
- p {
+p {
     text-indent: 50px;
 }
-#p1 {
-    text-indent: 0px;
-}
-.randomtext {
-    font-variant: small-caps;
-}
-#button:hover {
+
+.button:hover {
     font-weight: bold;
 }
 #stylelist {
     list-style-type: circle;
     list-style-position: inside;
 }
-.note::before {
-    content:'Note:';
+
+.backgroundStuff {
+    background-image: url("http://www.w3schools.com/cssref/paper.gif");
+    background-repeat: repeat;
 }
+
+.backgroundShorthand {
+    background: #ffffff url("http://www.w3schools.com/cssref/paper.gif") repeat;
+    /* will be #ffffff if url isn't found */
+}
+
+/* Lab 1 Bonus Stuff */
+
+h2 + p {
+    text-indent: 0px;
+}
+
+.smallcaps::first-line {
+    font-variant: small-caps;
+}
+
+.note::before {
+    content: 'Note: ';
+}
+
+/* Handheld device stuff */
+
+@media screen and (max-height: 480px) and (max-width: 360px) {
+    body {
+        background-color: lightgrey;
+        word-break:break-all /* for long strings, wide tables etc... */
+    }
+}
+

@@ -6,63 +6,35 @@
 @page {
   margin: 3cm;
 }
-@media print {
-  footer {
+
+ footer {
     page-break-after: always;
     page-break-before: always;
-  }
-  p {
+}
+p {
     orphans: 2;
     widows: 2;
-    /* default */
-  }
+    /* default for @media print*/
+}
+a {
+    color: black;
 }
 body {
   background-color: white;
 }
-table {
-  margin: auto;
-  color: black;
-  font-size: 120%;
-  font-family: "Helvetica";
-  /* everyone's favorite */
-}
+
 #tabled {
   margin-top: 2px;
   margin-bottom: 2px;
   margin-left: 2px;
   margin-right: 2px;
 }
-p,
-p blockquote {
-  border: 5px solid black;
-}
-.randomtext {
-  text-transform: uppercase;
-}
-.randomtext2 {
-  text-align: right;
-}
-.randomtext3 {
-  text-decoration: underline;
-}
-/* Fill these in later */
 
-a:link {
-  color: grey;
+p,
+table {
+    page-break-inside: avoid;
 }
-a:visited {
-  color: #404040;
-}
-a:hover {
-  color: #505050;
-}
-a:active {
-  color: #808080;
-}
-input:focus {
-  background-color: #909090;
-}
+
 .firefoxcolumn {
   text-align: left;
 }
@@ -84,34 +56,106 @@ td {
   border-width: 3px;
   caption-side: bottom;
 }
-#image {
-  float: left;
-  vertical-align: text-top;
+
+table {
+margin: auto;
+color: black;
+font-size: 120%;
+font-family: "Comic Sans MS"; /* everyone's favorite */
+width: 90%;
+}
+code.toolong,
+td,
+th {
+    word-break: break-all;
+}
+#tabled {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+section,
+blockquote {
+    border: 5px solid black;
+    margin: 5px;
+    padding: 5px
+}
+
+pre {
+    font-variant: small-caps;
+    font-size: 5vw;
+}
+.textstuff{
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font: italic bold Georgia, serif;
+    font-size: 15px; /* could have been included above between bold and Georgia but this way we can use the "font-size" construct with an absolute value */
+}
+
+input {
+    width: 70%;
+}
+.firefoxcolumn {
+    text-align: left;
+}
+.chromecolumn,
+.sourcecolumn {
+    text-align: right;
+}
+.sourcecolmn {
+    font-style: italic;
+}
+#boldlist {
+    font-weight: bold;
+    text-align: center;
+}
+table,
+th,
+td {
+    border: 1px solid black;
+    border-color: black;
+    border-style: solid;
+    border-spacing: 2px;
+    border-width: 3px;
+    caption-side: top;
+}
+
+img {
+    height: auto;
+    width:100%;
+    max-width: 500px;
+    float: left;
+    vertical-align: text-top;
 }
 input[type="submit"],
 input[type="reset"] {
-  margin: 0 auto;
-  width: 49%;
+    margin: 0 auto;
+    width: 49%;
 }
-/* Fill these in later */
-/* appendix 3 */
 
 p {
-  text-indent: 50px;
+    text-indent: 50px;
 }
-#p1 {
-  text-indent: 0px;
-}
-.randomtext {
-  font-variant: small-caps;
-}
-#button:hover {
-  font-weight: bold;
-}
+
 #stylelist {
-  list-style-type: circle;
-  list-style-position: inside;
+    list-style-type: circle;
+    list-style-position: inside;
 }
+
+
+/* Lab 1 Bonus Stuff */
+
+h2 + p {
+    text-indent: 0px;
+}
+
+.smallcaps::first-line {
+    font-variant: small-caps;
+}
+
 .note::before {
-  content: 'Note:';
+    content: 'Note: ';
 }
+

@@ -1,183 +1,315 @@
 <!DOCTYPE HTML>
-<!-- Assignment 1 Peter Atkinson - 2555678 Antoni Stevenet - 2557398 -->
+<!-- Assignment 1
+Peter Atkinson - 2555678
+Antoni Stevenet - 2557398
+-->
 <html>
-
 <head>
-  <title>Assignment 1 - Web technology</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="Screen.css" />
+	<title>Assignment 1 - Web Technology</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="Screen.css" media="screen"/>
+	<link rel="stylesheet" href="Print.css" media="print" />
 </head>
-
 <body>
-  <h1>Assignment 1 - Web Technology</h1>
-  <h2>Peter Atkinson (2555678) &amp; Antoni Stevenet (2557398)</h2>
-  <nav>
-    <a href="#lab1">Lab 1</a>
-    <a href="#lab2">Lab 2</a>
-    <a href="#table">Table</a>
-  </nav>
-  <section id="lab1">
-    <h2>Lab 1</h2>
-    <h3>Note</h3>
-    <p>We're not using The background-image plus related properties because that would be illogical since we're already using a standard background color</p>
-    <p>We're not using the list-style-image properties for the same reason, and since we'd have to ship images together with the file, we have however some image properties set up in the css in case any images get added</p>
-    <h3>Question 1</h3>
-    <p>On the first line is the document type. Then inside the &lt;head&gt; tag there are &lt;meta&gt; tags specifying content type, generator, creation date, and changed date information. Then there is a &lt;style&gt; tag, empty title. The &lt;body&gt;
-      tag specifies language and direction (left-to-right in this case). The &lt;p&gt; tag is styled with no margin and 100% line height, which overrides &lt;p&gt;&apos;s previous style defined in the &lt;head&gt; tag.</p>
-    <h3>Question 2</h3>
-    <p>The Internet is a network of computer networks. The web is a way of sharing and consuming content using the internet (source:
-      <a href="http://www.w3.org/Help/#webinternet">http://www.w3.org/Help/#webinternet</a>).</p>
-    <h3>Question 3</h3>
-    <dl>
-      <dt>HTTP</dt>
-      <dd>HTTP stands for HyperText Transfer Protocol. It is used for communication between web client and web server. It uses port 80. Source:
-        <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
-      </dd>
-      <dt>SSH</dt>
-      <dd>SSH stands for Secure SHell. It is used for securely send commands to a remote computer. It uses port 22. Source:
-        <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
-      </dd>
-      <dt>FTP</dt>
-      <dd>FTP stands for File Transfer Protocol. It is used to transferring files between networked computers. It uses port 21. Source:
-        <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
-      </dd>
-    </dl>
-    <h3>Question 4</h3>
-    <p>WHATWG is focused on developing HTML5 for commercial applications and the W3C is focused on maximizing its openness and accessibility.</p>
-    <h3>Question 5</h3>
-    <p>Tim Berners-Lee created HTML (HyperText Markup Language), URIs (Uniform Resource Identifiers) and HTTP (HyperText Transfer Protocol) in order to build the World Wide Web on top of the already existing Internet infrastructure.</p>
-    <h3>Question 6</h3>
-    <p>&lt;strong&gt; is preferrable in this case. &lt;b&gt; is meant to draw attention without changing the mood of the sentence and strong is meant to convery importance or urgency (source:</p>
-    <a href="https://html.spec.whatwg.org/multipage/semantics.html">https://html.spec.whatwg.org/multipage/semantics.html</a>). For example, compare
-    <blockquote>&lt;strong&gt;
-      <strong>Do not</strong>&lt;&#47;strong&gt; eat that; it's poisonous.</blockquote>to
-    <blockquote>&lt;b&gt;
-      <b>This</b>&lt;&#47;b&gt;, on the other hand, is not poisonous.</blockquote>
-    <p>Another pair of similar HTML constructs are &lt;em&gt; and &lt;i&gt;. &lt;em&gt; is meant to emphasize the highlighted text and &lt;i&gt; is meant to change the mood of it, loosely speaking.</p>
-    <h3>Question 7</h3>
-    <p>Divs are block elements and spans are inline elements. This means that on a webpage there will be a line break after a div and not after a span. They are similar in that they both denote sections of content (source:
-      <a href="http://www.1keydata.com/css-tutorial/div-span.php">http://www.1keydata.com/css-tutorial/div-span.php</a>).</p>
-    <h3>Question 8</h3>
-    <h3>Pros</h3>
-    <ul>
-      <li>Ability to keep part of page static while changing another part</li>
-      <li>Can reduce bandwidth and server load</li>
-    </ul>
-    <h3>Cons</h3>
-    <ul>
-      <li>Search engines have problems processing them</li>
-      <li>URL doesn't change when you browse a site that uses frames</li>
-      <li>Printing problems</li>
-    </ul>
-    <h3>Question 9</h3>
-    <ul id="stylelist">
-      <li>Makes changing the layout of a site a simple task.</li>
-      <li>Allows the content to be separated from the style (helpful for people with disabilities or text-based browsers).</li>
-      <li>Reduces html filesize and therefore bandwidth requirements.</li>
-      <li>Consistent navigation layout without requiring the use of frames</li>
-      <li>Allows search engines to evaluate your site more effectively</li>
-      <li>Readable and easy to work with</li>
-      <li>Browsers cache CSS files which increases speed for end users.</li>
-    </ul>
-    <span>(source:
-                <a href="http://www.vordweb.co.uk/css/advantages-of-css.htm">http://www.vordweb.co.uk/css/advantages-of-css.htm</a>).</span>
-    <h3>Question 10</h3>
-    <p>Expectation: makes it bold</p>
-    <p>Reality: doesn't make a difference</p>
-    <h3>Question 11</h3>
-    <table id="firefoxvschrome">
-      <caption>Firefox vs. Chrome</caption>
-      <tr>
-        <th class="firefoxcolumn">Firefox</th>
-        <th class="chromecolumn">Chrome</th>
-        <th class="sourcecolumn">Sources</th>
-      </tr>
-      <tr>
-        <td class="firefoxcolumn">Open source</td>
-        <td class="chromecolumn">Not open source (though based on open source browser Chromium)</td>
-        <td class="sourcecolumn">
-          <a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a>
-        </td>
-      </tr>
-      <tr>
-        <td class="firefoxcolumn">Uses SpiderMonkey JavaScript engine</td>
-        <td class="chromecolumn">Uses V8 JavaScript engine</td>
-        <td class="sourcecolumn">
-          <a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a>
-        </td>
-      </tr>
-      <tr>
-        <td class="firefoxcolumn">15.6% Web Browser Market Share</td>
-        <td class="chromecolumn">42.5% Web Browser Market Share</td>
-        <td class="sourcecolumn">
-          <a href="http://www.w3counter.com/globalstats.php?year=2014&amp;month=12">W3Counter</a>
-        </td>
-      </tr>
-    </table>
-  </section>
-  <section id="lab2">
-    <h2>Lab 2</h2>
-  </section>
-  <section id="table">
-    <h2>Table</h2>
-    <form id="form" action="http://wt.ops.few.vu.nl/api/1c803e2a" method="post">
-      <table id="tabled">
-        <caption>Inventory table</caption>
-        <tr id="boldlist">
-          <th>Banana</th>
-          <th>Dishwasher</th>
-          <th>Parachute</th>
-          <th>Chair</th>
-          <th>
-            <input type="text" name="name" required>
-          </th>
-        </tr>
-        <tr>
-          <td>Fruit</td>
-          <td>Appliance</td>
-          <td>Fun</td>
-          <td>Furniture</td>
-          <td>
-            <input type="text" name="category" required>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>2</td>
-          <td>
-            <input type="number" name="amount" required>
-          </td>
-        </tr>
-        <tr>
-          <td>Amsterdam</td>
-          <td>Den Haag</td>
-          <td>Groningen</td>
-          <td>Den Haag</td>
-          <td>
-            <input type="text" name="location" required>
-          </td>
-        </tr>
-        <tr>
-          <td>2011-11-11</td>
-          <td>2012-12-12</td>
-          <td>2011-11-11</td>
-          <td>2012-12-12</td>
-          <td>
-            <input type="date" name="date" required>
-          </td>
-        </tr>
-        <tr>
-          <th colspan="5">
-            <input id="button" type="submit" value="Submit">
-          </th>
-        </tr>
-      </table>
-    </form>
-  </section>
-</body>
-<script src="main.js" type="text/javascript"></script>
+	<h1>Assignment 1 - Web Technology</h1>
+	<h2>Peter Atkinson (2555678) &amp; Antoni Stevenet (2557398)</h2>
+	<nav>
+		<a href="#lab1">Lab 1</a> |
+		<a href="#lab2">Lab 2</a> |
+		<a href="#table">Table</a> |
+		<a href="#song">Song Lyrics using the pre tag</a>
+	</nav>
+	<h3>Notes</h3>
+	<p class="note textstuff">this is here to demonstrate css text constructs that we didn't put anywhere else.</p>
+	<p class="note othertextstuff">Our main CSS was made to fit all window sizes (within reason). The Handheld optimization we used <code>word-break:break-all</code> to make sure long strings were being wrapped. To test it we used the Responsive Design View of Firefox Developer Edition.</p>
+	<section id="lab1">
+		<h2>Lab 1</h2>
+		<h3>Question 1</h3>
+		<p>On the first line is the document type. Then inside the &lt;head&gt; tag there are &lt;meta&gt; tags specifying content type, generator, creation date, and changed date information. Then there is a &lt;style&gt; tag with a 0.79in margin in the @page at-rule and then a paragraph style of 0.1in margin-bottom and 120% line height. The title is empty. The &lt;body&gt; tag specifies language and direction (left-to-right in this case). The &lt;p&gt; tag is styled with no margin and 100% line height, which overrides &lt;p&gt;&apos;s previous style defined in the &lt;head&gt; tag.</p>
 
-</html>
+		<h3>Question 2</h3>
+		<p>The Internet is a network of computer networks. The web is a way of sharing and consuming content using the internet (source: <a href="http://www.w3.org/Help/#webinternet">http://www.w3.org/Help/#webinternet</a>).</p>
+
+		<h3>Question 3</h3>
+		<dl>
+			<dt>HTTP</dt>
+			<dd>HTTP stands for HyperText Transfer Protocol. It is used for communication between web client and web server. It uses port 80. Source: <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a></dd>
+			<dt>SSH</dt>
+			<dd>SSH stands for Secure SHell. It is used for securely send commands to a remote computer. It uses port 22. Source: <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a></dd>
+			<dt>FTP</dt>
+			<dd>FTP stands for File Transfer Protocol. It is used to transferring files between networked computers. It uses port 21. Source: <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a></dd>
+		</dl>
+
+		<h3>Question 4</h3>
+		<p>WHATWG is focused on developing HTML5 for commercial applications and the W3C is focused on maximizing its openness and accessibility.</p>
+
+		<h3>Question 5</h3>
+		<p>Tim Berners-Lee created HTML (HyperText Markup Language), URIs (Uniform Resource Identifiers) and HTTP (HyperText Transfer Protocol) in order to build the World Wide Web on top of the already existing Internet infrastructure.</p>
+
+		<h3>Question 6</h3>
+		<p>&lt;strong&gt; is preferrable in this case. &lt;b&gt; is meant to draw attention without changing the mood of the sentence and strong is meant to convery importance or urgency (source: <a href="https://html.spec.whatwg.org/multipage/semantics.html">https://html.spec.whatwg.org/multipage/semantics.html</a>). For example, compare</p>
+		<blockquote>&lt;strong&gt;<strong>Do not</strong>&lt;&#47;strong&gt; eat that; it's poisonous.</blockquote>
+		to
+		<blockquote>&lt;b&gt;<b>This</b>&lt;&#47;b&gt;, on the other hand, is not poisonous.</blockquote>
+		<p>Another pair of similar HTML constructs are &lt;em&gt; and &lt;i&gt;. &lt;em&gt; is meant to emphasize the highlighted text and &lt;i&gt; is meant to change the mood of it, loosely speaking.</p>
+
+		<h3>Question 7</h3>
+		<p>Divs are block elements and spans are inline elements. This means that on a webpage there will be a line break after a div and not after a span. They are similar in that they both denote sections of content (source: <a href="http://www.1keydata.com/css-tutorial/div-span.php">http://www.1keydata.com/css-tutorial/div-span.php</a>).</p>
+
+		<h3>Question 8</h3>
+		<ul>
+			<li>Pros
+				<ul class="pro">
+					<li>Ability to keep part of page static while changing another part</li>
+					<li>Can reduce bandwidth and server load</li>
+				</ul>
+			</li>
+			<li>Cons
+				<ul class="con">
+					<li>Search engines have problems processing them</li>
+					<li>URL doesn't change when you browse a site that uses frames</li>
+					<li>Printing problems</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h3>Question 9</h3>
+		<ul class="l1q9">
+			<li>Makes changing the layout of a site a simple task.</li>
+			<li>Allows the content to be separated from the style (helpful for people with disabilities or text-based browsers).</li>
+			<li>Reduces html filesize and therefore bandwidth requirements.</li>
+			<li>Consistent navigation layout without requiring the use of frames</li>
+			<li>Allows search engines to evaluate your site more effectively</li>
+			<li>Readable and easy to work with</li>
+			<li>Browsers cache CSS files which increases speed for end users.</li>
+		</ul>
+		<span>(source: <a href="http://www.vordweb.co.uk/css/advantages-of-css.htm">http://www.vordweb.co.uk/css/advantages-of-css.htm</a>).</span>
+
+		<h3>Question 10</h3>
+		<p>Expectation: makes it bold</p>
+		<p>Reality: doesn't make a difference</p>
+
+		<h3>Question 11</h3>
+		<table id='firefoxvschrome' class="backgroundShorthand">
+			<caption>Firefox vs. Chrome</caption>
+			<tr>
+
+				<th class="firefoxcolumn">Firefox</th>
+				<th class="chromecolumn">Chrome</th>
+				<th class="sourcecolumn">Sources</th>
+			</tr>
+			<tr>
+
+				<td class="firefoxcolumn">Open source</td>
+				<td class="chromecolumn">Not open source (though based on open source browser Chromium)</td>
+				<td class="sourcecolumn"><a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a></td>
+			</tr>
+			<tr>
+
+				<td class="firefoxcolumn">Uses SpiderMonkey JavaScript engine</td>
+				<td class="chromecolumn">Uses V8 JavaScript engine</td>
+				<td class="sourcecolumn"><a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a></td>
+			</tr>
+			<tr>
+
+				<td class="firefoxcolumn">15.6% Web Browser Market Share</td>
+				<td class="chromecolumn">42.5% Web Browser Market Share</td>
+				<td class="sourcecolumn"><a href="http://www.w3counter.com/globalstats.php?year=2014&amp;month=12">W3Counter</a></td>
+			</tr>
+
+		</table>
+		<h2>Bonus question</h2>
+		<p>Readers will notice the first line of each paragraph is indented except for the first paragraph following a level-two heading (like this one).</p>
+		<p>This one is indented. Filler text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend enim non mi varius, sed faucibus magna dictum. Etiam metus nibh, volutpat et dignissim a, ultricies non elit. Vestibulum sapien nisi, pellentesque vitae est at, luctus fermentum mauris. Nunc posuere, nulla ac ullamcorper laoreet, sapien metus vehicula purus, sed tristique urna enim eget quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus dignissim turpis vel nibh gravida sodales. Nam ante lectus, volutpat id metus eget, suscipit ultricies lacus. Pellentesque convallis convallis ex, id auctor diam molestie vitae. Maecenas pellentesque auctor mi id blandit.</p>
+		<div class="smallcaps">
+			<p class="note">This is a note paragraph class inside a smallcaps div class. The "Note: " at the beginning of this paragraph is not present in the text of the HTML document and only the first line is in smallcaps. Filler text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend enim non mi varius, sed faucibus magna dictum. Etiam metus nibh, volutpat et dignissim a, ultricies non elit. Vestibulum sapien nisi, pellentesque vitae est at, luctus fermentum mauris. Nunc posuere, nulla ac ullamcorper laoreet, sapien metus vehicula purus, sed tristique urna enim eget quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus dignissim turpis vel nibh gravida sodales. Nam ante lectus, volutpat id metus eget, suscipit ultricies lacus. Pellentesque convallis convallis ex, id auctor diam molestie vitae. Maecenas pellentesque auctor mi id blandit.</p>
+		</div>
+	</section>
+	<section id="lab2">
+		<h2>Lab 2</h2>
+		<h3>Question 1</h3>
+		<p>In Chrome: View &#8594; Developer &#8594; JavaScript console</p>
+
+		<h3>Question 2</h3>
+		<p>Using JavaScript and the DOM API to change the background of the body element to the color red:</p>
+		<a href="javascript:;" onclick="bgChanger()"><code>document.body.style.background ="red"</code></a>
+		<p>Using only JavaScript and DOM API to override the behavior of clicking on anchor element:</p>
+		<a id="q2" href="http://freegold.com" onclick="linkChanger()">
+			<figure>
+				<img src="http://i.imgur.com/WF18ddO.jpg" alt="Free gold!" />
+				<figcaption>Click above for free gold!</figcaption>
+			</figure>
+		</a>
+		<q>It's <em>totally</em> legit!</q>
+		<p>- one of <abbr title="Gold Giveaway Group">GGG</abbr>'s representatives</p>
+
+		<script type="text/javascript">
+		function linkChanger() {
+			document.querySelector('#q2').href='http://i.imgur.com/aPfviUv.png'
+		}
+		function bgChanger() {
+			document.body.style.background = "red"
+		}
+		</script>
+		<p>This is how it works:</p>
+		<code>&lt;a id=”q2” href="http://freegold.com" onlick="linkChanger()"&gt;Insert free gold image here&lt;/a&gt;</code>
+		<br />
+		<code class='toolong'>document.querySelector('#q2').href='http://i.imgur.com/aPfviUv.png'</code>
+		<h3>Question 3</h3>
+		<p>In jQuery you do without the 'document.querySelector' and replace it with a dollar sign.
+			<h4>DOM Pros &amp; Cons</h4>
+			<ul>
+				<li>Pros
+					<ul class="pro">
+						<li>Faster execution</li>
+						<li>Don't need entire jQuery library</li>
+						<li>Gives beginners a better understanding of what they're doing</li>
+					</ul>
+				</li>
+				<li>Cons
+					<ul class="con">
+						<li>Longer to type</li>
+					</ul>
+				</li>
+			</ul>
+			<h4>jQuery Pros &amp; Cons</h4>
+			<ul>
+				<li>Pros
+					<ul class="pro">
+						<li>Shorter to type</li>
+					</ul>
+				</li>
+				<li>Cons
+					<ul class="con">
+						<li>Slower execution</li>
+						<li>Need browser to load entire jQuery library</li>
+						<li>Could be done with much less overhead</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Question 4</h3>
+			<table class="backgroundStuff">
+				<caption>Java vs. JavaScript</caption>
+				<tr>
+					<th>JavaScript</th>
+					<th>Java</th>
+				</tr>
+				<tr>
+					<td colspan="2" class="tableSpanner">Similar syntax</td>
+				</tr>
+				<tr>
+					<td>Interpreted</td>
+					<td>Compiled</td>
+				</tr>
+				<tr>
+					<td>Variable types not declared</td>
+					<td>Variable types must be decalred</td>
+				</tr>
+				<tr>
+					<td>Embedded in HTMLL</td>
+					<td>Applets are accessed from HTML</td>
+				</tr>
+				<tr>
+					<td colspan="2">source: <a href="http://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol1/tay/Javascript.html">http://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol1/tay/Javascript.html</a></td>
+				</tr>
+			</table>
+			<h3>Question 5</h3>
+			<p>AJAX = asynchronous JavaScript and XML. The “asynchronous” means that a web page is able to communicate with the server and update itself without needed to refresh the page. (source: <a href="http://www.wrox.com/WileyCDA/Section/id-303217.html">http://www.wrox.com/WileyCDA/Section/id-303217.html</a>)</p>
+			<h3>Question 6</h3>
+			<p>Host objects are supplied by the browser (host environment). Native objects are implemented in JavaScript.</p>
+			<h3>Question 7</h3>
+			<p>JavaScript String objects store a series of characters. Date objects are used to manipulate dates and times (source: <a href="http://www.w3schools.com/jsref/">http://www.w3schools.com/jsref/</a>)</p>
+			<h3>Question 8</h3>
+			<p>Events = Something that happens to HTML elements (ex: mouse clicks, keypresses, form submissions etc...). Event listeners wait for specific events and then react to them</p>
+			<h3>Question 9</h3>
+			<ol id="stylelist">
+				<li>Google tries to match user requests in real time</li>
+				<li>Parameters limit the guesses based on context (locations only, within current bounds of map in the case of the video)</li>
+				<li>Event listener detects selections and shows the selected location on a map</li>
+			</ol>
+			<h3>Bonus question</h3>
+			<p>Facebook uses the Open Graph protocol to make it possible for other webpages to behave like a Facebook object.</p>
+			<ul>
+				<li>Pros
+					<ul class="pro">
+						<li>Other sites are able to give users customized content without any extra user input</li>
+						<li>Increases traffic to business sites</li>
+						<li>Allows end users to see a page's popularity among his/her friends</li>
+					</ul>
+				</li>
+				<li>Cons
+					<ul class="con">
+						<li>Privacy concerns</li>
+						<li>Liking pages is so easy that some people get carried away and like things that they'd prefer their friends not see</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+		<section id="table">
+			<h2>Table</h2>
+			<form action="http://wt.ops.few.vu.nl/api/1c803e2a" method="post">
+				<table id='tabled'>
+					<caption>Inventory table</caption>
+					<tr>
+						<th>Name</th>
+						<th>Category</th>
+						<th>Amount</th>
+						<th>Puchase Date</th>
+						<th>Location</th>
+					</tr>
+					<tr>
+						<td>Banana</td>
+						<td>Fruit</td>
+						<td>3</td>
+						<td>2012-12-12</td>
+						<td>Amsterdam</td>
+					</tr>
+					<tr>
+						<td>Dishwasher</td>
+						<td>Appliance</td>
+						<td>3</td>
+						<td>2012-12-12</td>
+						<td>Den Haag</td>
+					</tr>
+					<tr>
+						<td>Parachute</td>
+						<td>Extreme Sports</td>
+						<td>2</td>
+						<td>2012-12-12</td>
+						<td>Groningen</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" name="name" required>
+						</td>
+						<td>
+							<input type="text" name="category" required>
+						</td>
+						<td>
+							<input type="number" name="amount" required>
+						</td>
+						<td>
+							<input type="date" name="date" required>
+						</td>
+						<td>
+							<input type="text" name="location" required>
+						</td>
+					</tr>
+					<tr>
+						<th colspan="5">
+							<input class="button" type="submit" value="Submit">
+							<input class="button" type="reset" value="Reset">
+						</th>
+					</tr>
+				</table>
+			</form>
+		</section>
+		<section id="song">
+			<h2>Song Lyrics using the pre tag</h2>
+			<pre>&#9835; This is my webpage's song<br />	It isn't very long<br />HEY! &#9835;
+			</pre>
+		</section>
+	</body>
+	</html>
+
