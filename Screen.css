@@ -2,8 +2,10 @@
  * Antoni Stevenet - 2557398
  * Peter Atkinson - 2555678
  * */
-
-@media screen and (max-height: 480px) and (max-width: 360px) {
+ body {
+    background-color: #b0c4de;
+}
+@media screen and(max-height: 480px) and(max-width: 360px) {
     body {
         background-color: lightblue;
     }
@@ -21,9 +23,6 @@
         widows: 2;
         /* default */
     }
-}
-body {
-    background-color: #b0c4de;
 }
 table {
     margin: auto;
