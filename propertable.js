@@ -1,8 +1,8 @@
 $("form").submit(function(event) {
   event.preventDefault()
   var formObj = $(this)
-  var formURL = formObj.attr("action")
-  var formData = new FormData(this)
+    , formURL = formObj.attr("action")
+    , formData = new FormData(this)
 
   $.ajax({
     url: formURL,
