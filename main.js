@@ -26,8 +26,7 @@ $("form").submit(function(event) {
 })
 
 function addItemToList(item) { // for flipped tables
-  var table = document.getElementById("tabled")
-    , elems = document.querySelectorAll('#tabled tr')
+  var elems = document.querySelectorAll('#tabled tr')
     , length = document.querySelectorAll('#tabled tr')[1].querySelectorAll('td').length
     // set the properties in the list
   elems[0].insertCell(length - 1).innerHTML = item.category
