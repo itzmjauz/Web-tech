@@ -25,13 +25,12 @@ $("form").submit(function(event) {
 
 function addItemToList(item) { // from here http://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript
   var table = document.getElementById("tabled")
-  var row = table.insertRow(table.rows.length - 2)
-
-  var cell1 = row.insertCell(0).innerHTML = item.category
-  var cell2 = row.insertCell(1).innerHTML = item.name
-  var cell3 = row.insertCell(2).innerHTML = item.amount
-  var cell4 = row.insertCell(3).innerHTML = item.date
-  var cell5 = row.insertCell(4).innerHTML = item.location
+  ,   row = table.insertRow(table.rows.length - 2)
+  ,   cell1 = row.insertCell(0).innerHTML = item.category
+  ,   cell2 = row.insertCell(1).innerHTML = item.name
+  ,   cell3 = row.insertCell(2).innerHTML = item.amount
+  ,   cell4 = row.insertCell(3).innerHTML = item.date
+  ,   cell5 = row.insertCell(4).innerHTML = item.location
 
   document.forms[0].reset()
 }
