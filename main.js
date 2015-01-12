@@ -27,8 +27,8 @@ $("form").submit(function(event) {
 
 function addItemToList(item) { // for flipped tables
   var table = document.getElementById("tabled")
-  var elems = document.querySelectorAll('#tabled tr')
-  var length = document.querySelectorAll('#tabled tr')[1].querySelectorAll('td').length
+    , elems = document.querySelectorAll('#tabled tr')
+    , length = document.querySelectorAll('#tabled tr')[1].querySelectorAll('td').length
     // set the properties in the list
   elems[0].insertCell(length - 1).innerHTML = item.category
   elems[1].insertCell(length - 1).innerHTML = item.name
@@ -38,8 +38,4 @@ function addItemToList(item) { // for flipped tables
 
   document.querySelectorAll('#tabled tr th')[5].colSpan += 1
   document.forms[0].reset()
-}
-
-function addItem(item) {
-  inserRow()
 }
