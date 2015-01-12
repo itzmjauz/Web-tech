@@ -2,12 +2,10 @@
  * Antoni Stevenet - 2557398
  * Peter Atkinson - 2555678
  * */
-
-@page {
-  margin: 3cm;
+ @page {
+    margin: 3cm;
 }
-
- footer {
+footer {
     page-break-after: always;
     page-break-before: always;
 }
@@ -20,53 +18,44 @@ a {
     color: black;
 }
 body {
-  background-color: white;
+    background-color: white;
 }
-
 #tabled {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 2px;
-  margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
-
-p,
-table {
+p, table {
     page-break-inside: avoid;
 }
-
 .firefoxcolumn {
-  text-align: left;
+    text-align: left;
 }
-.chromecolumn,
-.sourcecolumn {
-  text-align: right;
+.chromecolumn, .sourcecolumn {
+    text-align: right;
 }
 #boldlist {
-  font-weight: bold;
-  text-align: center;
+    font-weight: bold;
+    text-align: center;
 }
-table,
-th,
-td {
-  border: 1px solid black;
-  border-color: black;
-  border-style: solid;
-  border-spacing: 2px;
-  border-width: 3px;
-  caption-side: bottom;
+table, th, td {
+    border: 1px solid black;
+    border-color: black;
+    border-style: solid;
+    border-spacing: 2px;
+    border-width: 3px;
+    caption-side: bottom;
 }
-
 table {
-margin: auto;
-color: black;
-font-size: 120%;
-font-family: "Comic Sans MS"; /* everyone's favorite */
-width: 90%;
+    margin: auto;
+    color: black;
+    font-size: 120%;
+    font-family:"Comic Sans MS";
+    /* everyone's favorite */
+    width: 90%;
 }
-code.toolong,
-td,
-th {
+code.toolong, td, th {
     word-break: break-all;
 }
 #tabled {
@@ -75,33 +64,30 @@ th {
     margin-left: 2px;
     margin-right: 2px;
 }
-section,
-blockquote {
+section, blockquote {
     border: 5px solid black;
     margin: 5px;
     padding: 5px
 }
-
 pre {
     font-variant: small-caps;
     font-size: 5vw;
 }
-.textstuff{
+.textstuff {
     text-align: right;
     text-transform: uppercase;
     text-decoration: underline;
     font: italic bold Georgia, serif;
-    font-size: 15px; /* could have been included above between bold and Georgia but this way we can use the "font-size" construct with an absolute value */
+    font-size: 15px;
+    /* could have been included above between bold and Georgia but this way we can use the "font-size" construct with an absolute value */
 }
-
 input {
     width: 70%;
 }
 .firefoxcolumn {
     text-align: left;
 }
-.chromecolumn,
-.sourcecolumn {
+.chromecolumn, .sourcecolumn {
     text-align: right;
 }
 .sourcecolmn {
@@ -111,9 +97,7 @@ input {
     font-weight: bold;
     text-align: center;
 }
-table,
-th,
-td {
+table, th, td {
     border: 1px solid black;
     border-color: black;
     border-style: solid;
@@ -121,7 +105,6 @@ td {
     border-width: 3px;
     caption-side: top;
 }
-
 img {
     height: auto;
     width:100%;
@@ -129,33 +112,24 @@ img {
     float: left;
     vertical-align: text-top;
 }
-input[type="submit"],
-input[type="reset"] {
+input[type="submit"], input[type="reset"] {
     margin: 0 auto;
     width: 49%;
 }
-
 p {
     text-indent: 50px;
 }
-
 #stylelist {
     list-style-type: circle;
     list-style-position: inside;
 }
-
-
 /* Lab 1 Bonus Stuff */
-
-h2 + p {
+ h2 + p {
     text-indent: 0px;
 }
-
 .smallcaps::first-line {
     font-variant: small-caps;
 }
-
 .note::before {
-    content: 'Note: ';
+    content:'Note: ';
 }
-

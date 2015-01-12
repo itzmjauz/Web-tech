@@ -2,20 +2,18 @@
 * Antoni Stevenet - 2557398
 * Peter Atkinson - 2555678
 * */
-
-body {
+ body {
     background-color: #b0c4de;
 }
 table {
     margin: auto;
     color: blue;
     font-size: 120%;
-    font-family: "Comic Sans MS"; /* everyone's favorite */
+    font-family:"Comic Sans MS";
+    /* everyone's favorite */
     width: 90%;
 }
-code.toolong,
-td,
-th {
+code.toolong, td, th {
     word-break: break-all;
 }
 #tabled {
@@ -24,18 +22,16 @@ th {
     margin-left: 2px;
     margin-right: 2px;
 }
-section,
-blockquote {
+section, blockquote {
     border: 5px solid red;
     margin: 5px;
     padding: 5px
 }
-
 ul.l1q9 {
     list-style-type: upper-roman;
-    list-style-position: outside; /* not noticeable on our current page, but here it is */
+    list-style-position: outside;
+    /* not noticeable on our current page, but here it is */
 }
-
 ul ul.pro {
     list-style-image: url('http://i.imgur.com/BYRGKOh.png?1');
 }
@@ -47,17 +43,17 @@ pre {
     font-variant: small-caps;
     font-size: 5vw;
 }
-.textstuff{
+.textstuff {
     text-align: right;
     text-transform: uppercase;
     text-decoration: underline;
     font: italic bold Georgia, serif;
-    font-size: 15px; /* could have been included above between bold and Georgia but this way we can use the "font-size" construct with an absolute value */
+    font-size: 15px;
+    /* could have been included above between bold and Georgia but this way we can use the "font-size" construct with an absolute value */
 }
 .othertextstuff {
     font-style: italic;
 }
-
 a:link {
     color: #FF0000;
 }
@@ -79,17 +75,14 @@ input {
 .firefoxcolumn {
     text-align: left;
 }
-.chromecolumn,
-.sourcecolumn {
+.chromecolumn, .sourcecolumn {
     text-align: right;
 }
 #boldlist {
     font-weight: bold;
     text-align: center;
 }
-table,
-th,
-td {
+table, th, td {
     border: 1px solid black;
     border-color: black;
     border-style: solid;
@@ -97,7 +90,6 @@ td {
     border-width: 3px;
     caption-side: top;
 }
-
 img {
     height: auto;
     width:100%;
@@ -105,16 +97,13 @@ img {
     float: left;
     vertical-align: text-top;
 }
-input[type="submit"],
-input[type="reset"] {
+input[type="submit"], input[type="reset"] {
     margin: 0 auto;
     width: 49%;
 }
-
 p {
     text-indent: 50px;
 }
-
 .button:hover {
     font-weight: bold;
 }
@@ -122,37 +111,29 @@ p {
     list-style-type: circle;
     list-style-position: inside;
 }
-
 .backgroundStuff {
     background-image: url("http://www.w3schools.com/cssref/paper.gif");
     background-repeat: repeat;
 }
-
 .backgroundShorthand {
     background: #ffffff url("http://www.w3schools.com/cssref/paper.gif") repeat;
     /* will be #ffffff if url isn't found */
 }
-
 /* Lab 1 Bonus Stuff */
-
-h2 + p {
+ h2 + p {
     text-indent: 0px;
 }
-
 .smallcaps::first-line {
     font-variant: small-caps;
 }
-
 .note::before {
-    content: 'Note: ';
+    content:'Note: ';
 }
-
 /* Handheld device stuff */
-
-@media screen and (max-height: 480px) and (max-width: 360px) {
+ @media screen and(max-height: 480px) and(max-width: 360px) {
     body {
         background-color: lightgrey;
-        word-break:break-all /* for long strings, wide tables etc... */
+        word-break:break-all
+        /* for long strings, wide tables etc... */
     }
 }
-
