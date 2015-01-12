@@ -33,5 +33,4 @@ function addItemToList(item) { // from here http://stackoverflow.com/questions/1
   ,   cell5 = row.insertCell(4).innerHTML = item.location
 
   document.forms[0].reset()
-  $("#tabled").tablesorter();
 }
