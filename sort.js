@@ -12,13 +12,18 @@ sortb[3].className = "sort3"
 sortb[4].className = "sort4"
 
 // assign onclick events
-for (ind in [0, 1, 2, 3, 4]) {
-
+for (var ind in [0, 1, 2, 3, 4]) {
   sortb[ind].onclick = function() {
     var oldName = this.className
     reset()
-    if(oldName == "sortUp") this.className = "sortDown"
-    else                    this.className = "sortUp"
+    if(oldName == "sortUp") {
+      this.className = "sortDown"
+      sortDown(ind)
+    }
+    else{
+      this.className = "sortUp"
+      sortUp(ind)
+    }
     // sort etc, flip table indexes. 
   }
 }
@@ -29,4 +34,12 @@ function reset(index) {
   I.forEach(function(ind) {
     sortb[ind].className = "sort" + ind
   })
+}
+
+function sortDown(ind){
+  console.log("sort down for column "+ind)
+}
+
+function sortUp(ind){
+  console.log("sort up for column "+ind)
 }
