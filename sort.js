@@ -12,7 +12,7 @@ sortb[3].className = "sort3"
 sortb[4].className = "sort4"
 
 // assign onclick events
-for (var ind in [0, 1, 2, 3, 4]) {
+for (var ind = 0; ind < 5 ; ind++) {
   sortb[ind].onclick = function() {
     var oldName = this.className
     reset()
@@ -36,10 +36,10 @@ function reset(index) {
   })
 }
 
-function sortDown(ind){
-  console.log("sort down for column "+ind)
-}
+function sort(){
+  var a = document.querySelector('#tabled .sortUp')
+    , b = document.querySelector('#tabled .sortDown')
 
-function sortUp(ind){
-  console.log("sort up for column "+ind)
+  if(a) sortUp(a)
+  if(b) sortDown(b)
 }
