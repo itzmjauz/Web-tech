@@ -4,10 +4,15 @@
 
  // className assignment for readability 
  sortb[0].className = "sort0"
+ sortb[0].id = "sort"
  sortb[1].className = "sort1"
+ sortb[1].id = "sort"
  sortb[2].className = "sort2"
+ sortb[2].id = "sort"
  sortb[3].className = "sort3"
+ sortb[3].id = "sort"
  sortb[4].className = "sort4"
+ sortb[4].id = "sort"
 
  // assign onclick events
  for (var ind = 0; ind < 5; ind++) {
