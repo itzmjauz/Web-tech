@@ -75,6 +75,13 @@
    return index
  }
 
-function write(table){
-  console.log(table)
-}
+ function write(table) {
+   console.log(table)
+
+   var elems = document.querySelectorAll('#tabled #tabledbody tr')
+   for (var x = 0; x < elems.length; x++) {
+     for (var y = 0; y < elems[x].querySelectorAll('td').length; y++) {
+       elems[x].querySelectorAll('td')[y].innerHTML = table[x][y]
+     }
+   }
+ }
