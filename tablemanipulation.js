@@ -1,3 +1,5 @@
+//Start table stuff
+
 $("form").submit(function(event) {
   event.preventDefault()
   var formObj = $(this)
@@ -34,3 +36,17 @@ function addItemToList(item) { // from here http://stackoverflow.com/questions/1
 
   document.forms[0].reset()
 }
+
+//End table stuff
+//Start display toggling
+
+function displayToggler(sectionID) {
+    section = document.getElementById(sectionID);
+    if (section.style.display == 'none') {
+        section.style.display = 'block';
+    } else {
+        section.style.display = 'none';
+    }
+}
+
+//End display toggling

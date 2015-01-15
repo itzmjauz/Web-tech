@@ -2,9 +2,14 @@
 * Antoni Stevenet - 2557398
 * Peter Atkinson - 2555678
 * */
- body {
+body {
     background-color: #b0c4de;
 }
+
+//section { /* double slashed for easy toggling */
+    display: none;
+}
+
 table {
     margin: auto;
     color: blue;
