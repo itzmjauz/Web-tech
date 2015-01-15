@@ -14,14 +14,9 @@ for (var ind = 0; ind < 5; ind++) {
   sortb[ind].onclick = function() {
     var oldName = this.className
     reset()
-    if (oldName == "sortUp") {
-      this.className = "sortDown"
-    }
-    else {
-      this.className = "sortUp"
-    }
+    if (oldName == "sortUp") this.className = "sortDown"
+    else this.className = "sortUp"
     sort()
-    // sort etc, flip table indexes. 
   }
 }
 
@@ -38,12 +33,18 @@ function sort() {
     , index = getIndex()
   if (a) {
     table.sort(function(x, y) {
-      return x[index] > y[index]
+      if(isNaN(x) || isNaN(y)) return x[index] > y[index]
+      else {
+        return parseInt(x[index]) > parseInt(y[index])
+      }
     })
   }
   if (b) {
     table.sort(function(x, y) {
-      return x[index] < y[index]
+      if(isNaN(x) || isNaN(y)) return x[index] < y[index]
+      else {
+        return parseInt(x[index]) <  parseInt(y[index])
+      }
     })
   }
   write(table)
