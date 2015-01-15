@@ -26,8 +26,8 @@ code.toolong, td, th {
 .sortDown:after {
     content :"▼";
 }
-#sort:after {
-    content :"▶";
+.sort0:after, .sort1:after, .sort2:after, .sort3:after, .sort4:after {
+        content :"▶";
 }
 #tabled {
     margin-top: 2px;
