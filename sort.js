@@ -33,18 +33,14 @@ function sort() {
     , index = getIndex()
   if (a) {
     table.sort(function(x, y) {
-      if(isNaN(x) || isNaN(y)) return x[index] > y[index]
-      else {
-        return parseInt(x[index]) > parseInt(y[index])
-      }
+      if(!isNaN(x[index]) && !isNaN(y[index])) return parseInt(x[index]) > parseInt(y[index])
+      else return x[index] > y[index]
     })
   }
   if (b) {
     table.sort(function(x, y) {
-      if(isNaN(x) || isNaN(y)) return x[index] < y[index]
-      else {
-        return parseInt(x[index]) <  parseInt(y[index])
-      }
+      if(!isNaN(x[index]) && !isNaN(y[index])) return parseInt(x[index]) <  parseInt(y[index])
+      else return x[index] < y[index]
     })
   }
   write(table)
