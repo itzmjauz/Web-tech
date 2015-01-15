@@ -1,6 +1,6 @@
- // selects all rows, dont work with the first + last two rows. so
+// Written by Antoni Stevenet And Peter Atkinson
+// selects all rows, dont work with the first + last two rows. so
  var sortb = document.querySelectorAll('#tabled thead th')
-
 
  // className assignment for readability 
  sortb[0].className = "sort0"
