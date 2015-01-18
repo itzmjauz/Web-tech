@@ -2,7 +2,7 @@
 // selects all rows, dont work with the first + last two rows. so
 var sortb = document.querySelectorAll('#tabled thead th')
 
-// className assignment for readability 
+// className assignment for readability
 sortb[0].className = "sort0"
 sortb[1].className = "sort1"
 sortb[2].className = "sort2"
@@ -34,13 +34,13 @@ function sort() {
   if (a) {
     table.sort(function(x, y) {
       if(!isNaN(x[index]) && !isNaN(y[index])) return eval(x[index]) > eval(y[index])
-      else return x[index] > y[index]
+      else return x[index].toLowerCase() > y[index].toLowerCase()
     })
   }
   if (b) {
     table.sort(function(x, y) {
       if(!isNaN(x[index]) && !isNaN(y[index])) return eval(x[index]) <  eval(y[index])
-      else return x[index] < y[index]
+      else return x[index].toLowerCase() < y[index].toLowerCase()
     })
   }
   write(table)

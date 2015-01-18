@@ -42,7 +42,7 @@ function addItemToList(item) { // from here http://stackoverflow.com/questions/1
 
 function displayToggler(sectionID) {
     section = document.getElementById(sectionID);
-    if (section.style.display == 'none') {
+    if (section.style.display == 'none' || section.style.display =='') {
         section.style.display = 'block';
     } else {
         section.style.display = 'none';

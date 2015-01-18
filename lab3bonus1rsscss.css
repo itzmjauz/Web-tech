@@ -1,0 +1,78 @@
+rss {
+    display: block;
+    font-family: helvetica;
+}
+channel {
+    display: block;
+}
+channel title {
+    font-size: 3vh;
+    display: block;
+    margin: 5px;
+    padding: 2px;
+    color: blue;
+    border: 1px solid blue;
+}
+channel link::before {
+    content:'Home: '
+}
+.note::before {
+    content:'Note: ';
+}
+channel description::before {
+    content:'Description: ';
+}
+channel generator::before {
+    content:'Generator: ';
+}
+generator {
+    display: block;
+}
+managingEditor::before {
+    content:'Managing editor: '
+}
+managingEditor {
+    display: block;
+}
+webMaster::before {
+    content:'Webmaster: '
+}
+webMaster {
+    display: block;
+}
+item {
+    display: block;
+    padding: 2px 30px 2px 30px;
+}
+item link::before {
+    content:'';
+}
+item title {
+    font-size: 2vh;
+    display: block;
+    margin: 5px;
+    padding: 2px;
+    color: red;
+    border: 1px solid blue;
+}
+item link {
+    display: block;
+    font-size: x-small;
+    padding-left: 10px;
+    color: blue
+}
+pubDate {
+    font-size: x-small;
+    color: grey;
+}
+item description {
+    display:block;
+    font-size: small;
+}
+guid::before {
+    content:'guid: ';
+}
+guid {
+    font-size: xx-small;
+    color: grey;
+}

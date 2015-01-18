@@ -1,371 +1,542 @@
 <!DOCTYPE HTML>
-<!-- Assignment 1 Peter Atkinson - 2555678 Antoni Stevenet - 2557398 -->
+<!-- Assignment 1
+Peter Atkinson - 2555678
+Antoni Stevenet - 2557398
+-->
 <html>
-    <head>
-        <title>Assignment 2 - Web technology</title>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8"
-            />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-        <link rel="stylesheet" href="Screen.css" />
-    </head>
-    <body>
-        <h1>Assignment 2 - Web Technology</h1>
-        <h2>Peter Atkinson (2555678) &amp; Antoni Stevenet (2557398)</h2>
-        <nav>
-            <a href="#lab1" onclick="displayToggler('lab1')">Lab 1</a>|
-            <a href="#lab2" onclick="displayToggler('lab2')">Lab 2</a>|
-            <a href="#lab3" onclick="displayToggler('lab3')">Lab 3</a>|
-            <a href="#lab4" onclick="displayToggler('lab4')">Lab 4</a>|
-            <a href="#table" onclick="displayToggler('table')">Table</a>|
-            <a href="#song" onclick="displayToggler('song')">Song Lyrics using the pre tag</a>
-        </nav>
-        <h3>Note</h3>
-        <p>We're not using The background-image plus related properties because that would
-            be illogical since we're already using a standard background color
-        </p>
-        <p>We're not using the list-style-image properties for the same reason, and since
-            we'd have to ship images together with the file, we have however some image properties
-            set up in the css in case any images get added
-        </p>
-        <section id="lab1">
-            <h2>Lab 1</h2>
-            <h3>Question 1</h3>
-            <p>On the first line is the document type. Then inside the &lt;head&gt; tag there
-                are &lt;meta&gt; tags specifying content type, generator, creation date, and changed
-                date information. Then there is a &lt;style&gt; tag, empty title. The &lt;body&gt;
-                tag specifies language and direction (left-to-right in this case). The &lt;p&gt;
-                tag is styled with no margin and 100% line height, which overrides &lt;p&gt;&apos;s
-                previous style defined in the &lt;head&gt; tag.
-            </p>
-            <h3>Question 2</h3>
-            <p>The Internet is a network of computer networks. The web is a way of sharing and
-                consuming content using the internet (source:
-                <a href="http://www.w3.org/Help/#webinternet">http://www.w3.org/Help/#webinternet</a>).
-            </p>
-            <h3>Question 3</h3>
-            <dl>
-                <dt>HTTP</dt>
-                <dd>HTTP stands for HyperText Transfer Protocol. It is used for communication between
-                    web client and web server. It uses port 80. Source:
-                    <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
-                </dd>
-                <dt>SSH</dt>
-                <dd>SSH stands for Secure SHell. It is used for securely send commands to a remote
-                    computer. It uses port 22. Source:
-                    <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
-                </dd>
-                <dt>FTP</dt>
-                <dd>FTP stands for File Transfer Protocol. It is used to transferring files between
-                    networked computers. It uses port 21. Source:
-                    <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a>
-                </dd>
-            </dl>
-            <h3>Question 4</h3>
-            <p>WHATWG is focused on developing HTML5 for commercial applications and the W3C
-                is focused on maximizing its openness and accessibility.
-            </p>
-            <h3>Question 5</h3>
-            <p>Tim Berners-Lee created HTML (HyperText Markup Language), URIs (Uniform Resource
-                Identifiers) and HTTP (HyperText Transfer Protocol) in order to build the World
-                Wide Web on top of the already existing Internet infrastructure.
-            </p>
-            <h3>Question 6</h3>
-            <p>&lt;strong&gt; is preferrable in this case. &lt;b&gt; is meant to draw attention
-                without changing the mood of the sentence and strong is meant to convery importance
-                or urgency (source:
-                <a href="https://html.spec.whatwg.org/multipage/semantics.html">https://html.spec.whatwg.org/multipage/semantics.html</a>). For example, compare
-            </p>
-            <blockquote>&lt;strong&gt;
-                <strong>Do not</strong>&lt;&#47;strong&gt; eat that; it's poisonous.
-            </blockquote>
-            to
-            <blockquote>&lt;b&gt;
-                <b>This</b>&lt;&#47;b&gt;, on the other hand, is not poisonous.
-            </blockquote>
-            <p>Another pair of similar HTML constructs are &lt;em&gt; and &lt;i&gt;. &lt;em&gt;
-                is meant to emphasize the highlighted text and &lt;i&gt; is meant to change the
-                mood of it, loosely speaking.
-            </p>
-            <h3>Question 7</h3>
-            <p>Divs are block elements and spans are inline elements. This means that on a webpage
-                there will be a line break after a div and not after a span. They are similar in
-                that they both denote sections of content (source:
-                <a href="http://www.1keydata.com/css-tutorial/div-span.php">http://www.1keydata.com/css-tutorial/div-span.php</a>).
-            </p>
-            <h3>Question 8</h3>
-            <ul>
-                <li>
-                    Pros
-                    <ul>
-                        <li>Ability to keep part of page static while changing another part</li>
-                        <li>Can reduce bandwidth and server load</li>
-                    </ul>
-                </li>
-                <li>
-                    Cons
-                    <ul>
-                        <li>Search engines have problems processing them</li>
-                        <li>URL doesn't change when you browse a site that uses frames</li>
-                        <li>Printing problems</li>
-                    </ul>
-                </li>
-            </ul>
-            <h3>Question 9</h3>
-            <ul>
-                <li>Makes changing the layout of a site a simple task.</li>
-                <li>Allows the content to be separated from the style (helpful for people with disabilities
-                    or text-based browsers).
-                </li>
-                <li>Reduces html filesize and therefore bandwidth requirements.</li>
-                <li>Consistent navigation layout without requiring the use of frames</li>
-                <li>Allows search engines to evaluate your site more effectively</li>
-                <li>Readable and easy to work with</li>
-                <li>Browsers cache CSS files which increases speed for end users.</li>
-            </ul>
-            <span>(source:
-            <a href="http://www.vordweb.co.uk/css/advantages-of-css.htm">http://www.vordweb.co.uk/css/advantages-of-css.htm</a>).</span>
-            <h3>Question 10</h3>
-            <p>Expectation: makes it bold</p>
-            <p>Reality: doesn't make a difference</p>
-            <h3>Question 11</h3>
-            <table id='firefoxvschrome'>
-                <caption>Firefox vs. Chrome</caption>
-                <tr>
-                    <th class="firefoxcolumn">Firefox</th>
-                    <th class="chromecolumn">Chrome</th>
-                    <th class="sourcecolumn">Sources</th>
-                </tr>
-                <tr>
-                    <td class="firefoxcolumn">Open source</td>
-                    <td class="chromecolumn">Not open source (though based on open source browser Chromium)</td>
-                    <td class="sourcecolumn">
-                        <a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="firefoxcolumn">Uses SpiderMonkey JavaScript engine</td>
-                    <td class="chromecolumn">Uses V8 JavaScript engine</td>
-                    <td class="sourcecolumn">
-                        <a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="firefoxcolumn">15.6% Web Browser Market Share</td>
-                    <td class="chromecolumn">42.5% Web Browser Market Share</td>
-                    <td class="sourcecolumn">
-                        <a href="http://www.w3counter.com/globalstats.php?year=2014&amp;month=12">W3Counter</a>
-                    </td>
-                </tr>
-            </table>
-        </section>
-        <section id="lab2">
-            <h2>Lab 2</h2>
-            <h3>Question 1</h3>
-            <p>In Chrome: View &#8594; Developer &#8594; JavaScript console</p>
-            <h3>Question 2</h3>
-            <p>Using JavaScript and the DOM API to change the background of the body element
-                to the color red:
-            </p>
-            <code>document.body.style.background ="red"</code>
-            <p>Using only JavaScript and DOM API to override the behavior of clicking on anchor
-                element:
-            </p>
-            <figure>
-                <a id="q2" href="http://freegold.com" onclick="linkChanger()">
-                <img src="http://i.imgur.com/WF18ddO.jpg" alt="Free gold!">
-                <br />
-                </a>
-                <figcaption>Click above for free gold!</figcaption>
-            </figure>
-            <q>It's
-            <em>totally</em>legit!</q>
-            <p>- one of
-                <abbr title="Gold Giveaway Group">GGG</abbr>'s representatives
-            </p>
-            <script type="text/javascript">
-                function linkChanger() {
-                  document.querySelector('#q2').href='http://i.imgur.com/aPfviUv.png'
-                }
-            </script>
-            <p>This is how it works:</p>
-            <code>&lt;a id=”q2” href="http://freegold.com" onlick="linkChanger()"&gt;Insert free
-            gold image here&lt;/a&gt;</code>
-            <br />
-            <code>document.querySelector('#q2').href='http://i.imgur.com/aPfviUv.png'</code>
-            <h3>Question 3</h3>
-            <p>In jQuery you do without the 'document.querySelector' and replace it with a dollar
-                sign.
-            </p>
-            <h4>DOM Pros &amp; Cons</h4>
-            <ul>
-                <li>
-                    Pros
-                    <ul>
-                        <li>Faster execution</li>
-                        <li>Don't need entire jQuery library</li>
-                        <li>Gives beginners a better understanding of what they're doing</li>
-                    </ul>
-                </li>
-                <li>
-                    Cons
-                    <ul>
-                        <li>Longer to type</li>
-                    </ul>
-                </li>
-            </ul>
-            <h4>jQuery Pros &amp; Cons</h4>
-            <ul>
-                <li>
-                    Pros
-                    <ul>
-                        <li>Shorter to type</li>
-                    </ul>
-                </li>
-                <li>
-                    Cons
-                    <ul>
-                        <li>Slower execution</li>
-                        <li>Need browser to load entire jQuery library</li>
-                        <li>Could be done with much less overhead</li>
-                    </ul>
-                </li>
-            </ul>
-            <h3>Question 4</h3>
-            <table>
-                <caption>Java vs. JavaScript</caption>
-                <tr>
-                    <th>JavaScript</th>
-                    <th>Java</th>
-                </tr>
-                <tr>
-                    <td colspan="2" class="tableSpanner">Similar syntax</td>
-                </tr>
-                <tr>
-                    <td>Interpreted</td>
-                    <td>Compiled</td>
-                </tr>
-                <tr>
-                    <td>Variable types not declared</td>
-                    <td>Variable types must be decalred</td>
-                </tr>
-                <tr>
-                    <td>Embedded in HTMLL</td>
-                    <td>Applets are accessed from HTML</td>
-                </tr>
-                <tr>
-                    <td colspan="2">source:
-                        <a href="http://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol1/tay/Javascript.html">http://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol1/tay/Javascript.html</a>
-                    </td>
-                </tr>
-            </table>
-            <h3>Question 5</h3>
-            <p>AJAX = asynchronous JavaScript and XML. The “asynchronous” means that a web page
-                is able to communicate with the server and update itself without needed to refresh
-                the page. (source:
-                <a href="http://www.wrox.com/WileyCDA/Section/id-303217.html">http://www.wrox.com/WileyCDA/Section/id-303217.html</a>)
-            </p>
-            <h3>Question 6</h3>
-            <p>Host objects are supplied by the browser (host environment). Native objects are
-                implemented in JavaScript.
-            </p>
-            <h3>Question 7</h3>
-            <p>JavaScript String objects store a series of characters. Date objects are used
-                to manipulate dates and times (source:
-                <a href="http://www.w3schools.com/jsref/">http://www.w3schools.com/jsref/</a>)
-            </p>
-            <h3>Question 8</h3>
-            <p>Events = Something that happens to HTML elements (ex: mouse clicks, keypresses,
-                form submissions etc...). Event listeners wait for specific events and then react
-                to them
-            </p>
-            <h3>Question 9</h3>
-            <ol>
-                <li>Google tries to match user requests in real time</li>
-                <li>Parameters limit the guesses based on context (locations only, within current
-                    bounds of map in the case of the video)
-                </li>
-                <li>Event listener detects selections and shows the selected location on a map</li>
-            </ol>
-        </section>
-        <section id="lab3"></section>
-        <section id="lab4"></section>
-        <section id="table">
-            <h2>Table</h2>
-            <form action="http://wt.ops.few.vu.nl/api/1c803e2a" method="post">
-                <table id="tabled" class="sortable">
-                    <caption>Inventory table</caption>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Amount</th>
-                            <th>Puchase Date</th>
-                            <th>Location</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabledbody">
-                        <tr>
-                            <td>Banana</td>
-                            <td>Fruit</td>
-                            <td>1</td>
-                            <td>2012-12-12</td>
-                            <td>Amsterdam</td>
-                        </tr>
-                        <tr>
-                            <td>Dishwasher</td>
-                            <td>Appliance</td>
-                            <td>3</td>
-                            <td>2010-10-10</td>
-                            <td>Den Haag</td>
-                        </tr>
-                        <tr>
-                            <td>Parachute</td>
-                            <td>Extreme Sports</td>
-                            <td>2</td>
-                            <td>2011-11-11</td>
-                            <td>Groningen</td>
-                        </tr>
-                    </tbody>
-                    <tr>
-                        <td>
-                            <input type="text" name="name" required>
-                        </td>
-                        <td>
-                            <input type="text" name="category" required>
-                        </td>
-                        <td>
-                            <input type="number" name="amount" required>
-                        </td>
-                        <td>
-                            <input type="date" name="date" id="datepicker" required>
-                        </td>
-                        <td>
-                            <input type="text" name="location" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th colspan="5">
-                            <input type="submit" value="Submit">
-                            <input type="reset" value="Reset">
-                        </th>
-                    </tr>
-                </table>
-            </form>
-        </section>
-        <script type="text/javascript">
-            $( "#datepicker" ).datepicker({
-                dateFormat: "yy-mm-dd"
-            });
-        </script>
-        <section id="song">
-            <h2>Song Lyrics using the pre tag</h2>
-            <pre>&#9835; This is my webpage's song<br />It isn't very long<br />HEY! &#9835;</pre>
-        </section>
-        <script src="sort.js" type="text/javascript"></script>
-        <script src="loadtable.js" type="text/javascript"></script>
-        <script src="tablemanipulation.js" type="text/javascript"></script>
-    </body>
-</html>
+<head>
+    <title>Assignment 2 - Web technology</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="Screen.css" />
+</head>
+<body>
+    <h1>Assignment 2 - Web Technology</h1>
+    <h2>Peter Atkinson (2555678) &amp; Antoni Stevenet (2557398)</h2>
+    <nav>
+        <a href="#lab1" onclick="displayToggler('lab1')">Lab 1</a>|
+        <a href="#lab2" onclick="displayToggler('lab2')">Lab 2</a>|
+        <a href="#lab3" onclick="displayToggler('lab3')">Lab 3</a>|
+        <a href="#lab4" onclick="displayToggler('lab4')">Lab 4</a>|
+        <a href="#table" onclick="displayToggler('table')">Table</a>|
+        <a href="#song" onclick="displayToggler('song')">Song Lyrics using the pre tag</a>
+    </nav>
+    <h3>Note</h3>
+    <p class="note">Navigation links toggle visibility of sections.</p>
+    <p class="note textstuff">this is here to demonstrate css text constructs that we didn't put anywhere else.</p>
+    <p class="note othertextstuff">Our main CSS was made to fit all window sizes (within reason). The Handheld optimization we used <code>word-break:break-all</code> to make sure long strings were being wrapped. To test it we used the Responsive Design View of Firefox Developer Edition.</p>
+    <section id="lab1">
+        <h2>Lab 1</h2>
+        <h3>Question 1</h3>
+        <p>On the first line is the document type. Then inside the &lt;head&gt; tag there are &lt;meta&gt; tags specifying content type, generator, creation date, and changed date information. Then there is a &lt;style&gt; tag with a 0.79in margin in the @page at-rule and then a paragraph style of 0.1in margin-bottom and 120% line height. The title is empty. The &lt;body&gt; tag specifies language and direction (left-to-right in this case). The &lt;p&gt; tag is styled with no margin and 100% line height, which overrides &lt;p&gt;&apos;s previous style defined in the &lt;head&gt; tag.</p>
 
+        <h3>Question 2</h3>
+        <p>The Internet is a network of computer networks. The web is a way of sharing and consuming content using the internet (source: <a href="http://www.w3.org/Help/#webinternet">http://www.w3.org/Help/#webinternet</a>).</p>
+
+        <h3>Question 3</h3>
+        <dl>
+            <dt>HTTP</dt>
+            <dd>HTTP stands for HyperText Transfer Protocol. It is used for communication between web client and web server. It uses port 80. Source: <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a></dd>
+            <dt>SSH</dt>
+            <dd>SSH stands for Secure SHell. It is used for securely send commands to a remote computer. It uses port 22. Source: <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a></dd>
+            <dt>FTP</dt>
+            <dd>FTP stands for File Transfer Protocol. It is used to transferring files between networked computers. It uses port 21. Source: <a href="http://amzn.com/0132126958">Computer Networks - Andrew Tannenbaum</a></dd>
+        </dl>
+
+        <h3>Question 4</h3>
+        <p>WHATWG is focused on developing HTML5 for commercial applications and the W3C is focused on maximizing its openness and accessibility.</p>
+
+        <h3>Question 5</h3>
+        <p>Tim Berners-Lee created HTML (HyperText Markup Language), URIs (Uniform Resource Identifiers) and HTTP (HyperText Transfer Protocol) in order to build the World Wide Web on top of the already existing Internet infrastructure.</p>
+
+        <h3>Question 6</h3>
+        <p>&lt;strong&gt; is preferrable in this case. &lt;b&gt; is meant to draw attention without changing the mood of the sentence and strong is meant to convery importance or urgency (source: <a href="https://html.spec.whatwg.org/multipage/semantics.html">https://html.spec.whatwg.org/multipage/semantics.html</a>). For example, compare</p>
+        <blockquote>&lt;strong&gt;<strong>Do not</strong>&lt;&#47;strong&gt; eat that; it's poisonous.</blockquote>
+        to
+        <blockquote>&lt;b&gt;<b>This</b>&lt;&#47;b&gt;, on the other hand, is not poisonous.</blockquote>
+        <p>Another pair of similar HTML constructs are &lt;em&gt; and &lt;i&gt;. &lt;em&gt; is meant to emphasize the highlighted text and &lt;i&gt; is meant to change the mood of it, loosely speaking.</p>
+
+        <h3>Question 7</h3>
+        <p>Divs are block elements and spans are inline elements. This means that on a webpage there will be a line break after a div and not after a span. They are similar in that they both denote sections of content (source: <a href="http://www.1keydata.com/css-tutorial/div-span.php">http://www.1keydata.com/css-tutorial/div-span.php</a>).</p>
+
+        <h3>Question 8</h3>
+        <ul>
+            <li>Pros
+                <ul class="pro">
+                    <li>Ability to keep part of page static while changing another part</li>
+                    <li>Can reduce bandwidth and server load</li>
+                </ul>
+            </li>
+            <li>Cons
+                <ul class="con">
+                    <li>Search engines have problems processing them</li>
+                    <li>URL doesn't change when you browse a site that uses frames</li>
+                    <li>Printing problems</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Question 9</h3>
+        <ul class="l1q9">
+            <li>Makes changing the layout of a site a simple task.</li>
+            <li>Allows the content to be separated from the style (helpful for people with disabilities or text-based browsers).</li>
+            <li>Reduces html filesize and therefore bandwidth requirements.</li>
+            <li>Consistent navigation layout without requiring the use of frames</li>
+            <li>Allows search engines to evaluate your site more effectively</li>
+            <li>Readable and easy to work with</li>
+            <li>Browsers cache CSS files which increases speed for end users.</li>
+        </ul>
+        <span>(source: <a href="http://www.vordweb.co.uk/css/advantages-of-css.htm">http://www.vordweb.co.uk/css/advantages-of-css.htm</a>).</span>
+
+        <h3>Question 10</h3>
+        <p>Expectation: makes it bold</p>
+        <p>Reality: doesn't make a difference</p>
+
+        <h3>Question 11</h3>
+        <table id='firefoxvschrome' class="backgroundShorthand">
+            <caption>Firefox vs. Chrome</caption>
+            <tr>
+
+                <th class="firefoxcolumn">Firefox</th>
+                <th class="chromecolumn">Chrome</th>
+                <th class="sourcecolumn">Sources</th>
+            </tr>
+            <tr>
+
+                <td class="firefoxcolumn">Open source</td>
+                <td class="chromecolumn">Not open source (though based on open source browser Chromium)</td>
+                <td class="sourcecolumn"><a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a></td>
+            </tr>
+            <tr>
+
+                <td class="firefoxcolumn">Uses SpiderMonkey JavaScript engine</td>
+                <td class="chromecolumn">Uses V8 JavaScript engine</td>
+                <td class="sourcecolumn"><a href="http://www.diffen.com/difference/Firefox_vs_Google_Chrome">Diffen</a></td>
+            </tr>
+            <tr>
+
+                <td class="firefoxcolumn">15.6% Web Browser Market Share</td>
+                <td class="chromecolumn">42.5% Web Browser Market Share</td>
+                <td class="sourcecolumn"><a href="http://www.w3counter.com/globalstats.php?year=2014&amp;month=12">W3Counter</a></td>
+            </tr>
+
+        </table>
+        <h2>Bonus question</h2>
+        <p>Readers will notice the first line of each paragraph is indented except for the first paragraph following a level-two heading (like this one).</p>
+        <p>This one is indented. Filler text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend enim non mi varius, sed faucibus magna dictum. Etiam metus nibh, volutpat et dignissim a, ultricies non elit. Vestibulum sapien nisi, pellentesque vitae est at, luctus fermentum mauris. Nunc posuere, nulla ac ullamcorper laoreet, sapien metus vehicula purus, sed tristique urna enim eget quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus dignissim turpis vel nibh gravida sodales. Nam ante lectus, volutpat id metus eget, suscipit ultricies lacus. Pellentesque convallis convallis ex, id auctor diam molestie vitae. Maecenas pellentesque auctor mi id blandit.</p>
+        <div class="smallcaps">
+            <p class="note">This is a note paragraph class inside a smallcaps div class. The "Note: " at the beginning of this paragraph is not present in the text of the HTML document and only the first line is in smallcaps. Filler text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend enim non mi varius, sed faucibus magna dictum. Etiam metus nibh, volutpat et dignissim a, ultricies non elit. Vestibulum sapien nisi, pellentesque vitae est at, luctus fermentum mauris. Nunc posuere, nulla ac ullamcorper laoreet, sapien metus vehicula purus, sed tristique urna enim eget quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus dignissim turpis vel nibh gravida sodales. Nam ante lectus, volutpat id metus eget, suscipit ultricies lacus. Pellentesque convallis convallis ex, id auctor diam molestie vitae. Maecenas pellentesque auctor mi id blandit.</p>
+        </div>
+    </section>
+    <section id="lab2">
+        <h2>Lab 2</h2>
+        <h3>Question 1</h3>
+        <p>In Chrome: View &#8594; Developer &#8594; JavaScript console</p>
+
+        <h3>Question 2</h3>
+        <p>Using JavaScript and the DOM API to change the background of the body element to the color red (has toggling functionality):</p>
+        <a href="javascript:;" onclick="bgChanger()"><code>document.body.style.background ="red"</code></a>
+        <p>Using only JavaScript and DOM API to override the behavior of clicking on anchor element:</p>
+        <a id="q2" href="http://freegold.com" onclick="linkChanger()">
+            <figure>
+                <img src="http://i.imgur.com/WF18ddO.jpg" alt="Free gold!" />
+                <figcaption>Click me for free gold!</figcaption>
+            </figure>
+        </a>
+        <q>It's <em>totally</em> legit!</q>
+        <p>- one of <abbr title="Gold Giveaway Group">GGG</abbr>'s representatives</p>
+
+        <script type="text/javascript">
+        function linkChanger() {
+            document.querySelector('#q2').href='http://i.imgur.com/aPfviUv.png'
+        }
+        function bgChanger() {
+            if (document.body.style.background != "red") {
+                document.body.style.background = "red"
+            } else {
+                document.body.style.background = ""
+            }
+        }
+        </script>
+        <p>This is how it works:</p>
+        <code>&lt;a id=”q2” href="http://freegold.com" onlick="linkChanger()"&gt;Insert free gold image here&lt;/a&gt;</code>
+        <br />
+        <code class='toolong'>document.querySelector('#q2').href='http://i.imgur.com/aPfviUv.png'</code>
+        <h3>Question 3</h3>
+        <p>In jQuery you do without the 'document.querySelector' and replace it with a dollar sign.</p>
+        <h4>DOM Pros &amp; Cons</h4>
+        <ul>
+            <li>Pros
+                <ul class="pro">
+                    <li>Faster execution</li>
+                    <li>Don't need entire jQuery library</li>
+                    <li>Gives beginners a better understanding of what they're doing</li>
+                </ul>
+            </li>
+            <li>Cons
+                <ul class="con">
+                    <li>Longer to type</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>jQuery Pros &amp; Cons</h4>
+        <ul>
+            <li>Pros
+                <ul class="pro">
+                    <li>Shorter to type</li>
+                </ul>
+            </li>
+            <li>Cons
+                <ul class="con">
+                    <li>Slower execution</li>
+                    <li>Need browser to load entire jQuery library</li>
+                    <li>Could be done with much less overhead</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Question 4</h3>
+        <table class="backgroundStuff">
+            <caption>Java vs. JavaScript</caption>
+            <tr>
+                <th>JavaScript</th>
+                <th>Java</th>
+            </tr>
+            <tr>
+                <td colspan="2" class="tableSpanner">Similar syntax</td>
+            </tr>
+            <tr>
+                <td>Interpreted</td>
+                <td>Compiled</td>
+            </tr>
+            <tr>
+                <td>Variable types not declared</td>
+                <td>Variable types must be decalred</td>
+            </tr>
+            <tr>
+                <td>Embedded in HTMLL</td>
+                <td>Applets are accessed from HTML</td>
+            </tr>
+            <tr>
+                <td colspan="2">source: <a href="http://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol1/tay/Javascript.html">http://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol1/tay/Javascript.html</a></td>
+            </tr>
+        </table>
+        <h3>Question 5</h3>
+        <p>AJAX = asynchronous JavaScript and XML. The “asynchronous” means that a web page is able to communicate with the server and update itself without needed to refresh the page. (source: <a href="http://www.wrox.com/WileyCDA/Section/id-303217.html">http://www.wrox.com/WileyCDA/Section/id-303217.html</a>)</p>
+        <h3>Question 6</h3>
+        <p>Host objects are supplied by the browser (host environment). Native objects are implemented in JavaScript.</p>
+        <h3>Question 7</h3>
+        <p>JavaScript String objects store a series of characters. Date objects are used to manipulate dates and times (source: <a href="http://www.w3schools.com/jsref/">http://www.w3schools.com/jsref/</a>)</p>
+        <h3>Question 8</h3>
+        <p>Events = Something that happens to HTML elements (ex: mouse clicks, keypresses, form submissions etc...). Event listeners wait for specific events and then react to them</p>
+        <h3>Question 9</h3>
+        <ol id="stylelist">
+            <li>Google tries to match user requests in real time</li>
+            <li>Parameters limit the guesses based on context (locations only, within current bounds of map in the case of the video)</li>
+            <li>Event listener detects selections and shows the selected location on a map</li>
+        </ol>
+        <h3>Bonus question</h3>
+        <p>Facebook uses the Open Graph protocol to make it possible for other webpages to behave like a Facebook object.</p>
+        <ul>
+            <li>Pros
+                <ul class="pro">
+                    <li>Other sites are able to give users customized content without any extra user input</li>
+                    <li>Increases traffic to business sites</li>
+                    <li>Allows end users to see a page's popularity among his/her friends</li>
+                </ul>
+            </li>
+            <li>Cons
+                <ul class="con">
+                    <li>Privacy concerns</li>
+                    <li>Liking pages is so easy that some people get carried away and like things that they'd prefer their friends not see</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section id="lab3">
+        <h2>Lab 3</h2>
+        <h3>Question 1</h3>
+        <p>Both http://www.few.vu.nl and http://www.cs.vu.nl have the IP address 130.37.20.20. We found this out by running the following command in the terminal: <code>host www.few.vu.nl &amp;&amp; host www.cs.vu.nl</code>.</p>
+        <h3>Question 2</h3>
+        <p>IPv6 has a 128 bit address (instead of IPv4's 32-bit length). The move to IPv6 is necessary because we're running out of IPv4 addresses. IPv6 has 2^128 possible addresses (~3.4x10^38) whereas IPv4 only has 2^32 (~4.3 billion). Unlike IPv4, which represents addresses as four groups of decimal (base-10) digits separated by dots (123.234.12.4, for example), IPv6 represents its addresses as eight groups of four-digit hexadecimal numbers (abba:ba5e:ba11:dead:beef:cafe:ba11:ad52, for example).</p>
+        <h3>Question 3</h3>
+        <p>Stichting Internet Domeinregistratie Nederland - <a href="https://www.sidn.nl">https://www.sidn.nl</a></p>
+        <p><abbr title="Stichting Internet Domeinregistratie Nederland">SIDN</abbr> acts as the registry for the .nl <abbr title="Top Level Domain">TLD</abbr>. They also perform this service for other <abbr title="Top Level Domain">TLD</abbr>s such as Aruba's '.aw' domain. They also provide registry services, domain name surveillance, trust framework management.</p>
+        <h3>Question 4</h3>
+        <ol>
+            <li>Idemptotent, in the context of the HTTP GET method, means that the method's result will have the same outcome every time. This only applies to the result; the resource itself could be modified (updated timestamp, for example).
+            </li>
+            <li>Since idempotent requests do not change the result of a webpage request, HTTP proxies can just store and serve static content for idempotent requests.
+            </li>
+            <li>Visitor counters negate idempotence by changing the page's counter with each request.
+            </li>
+            <li>Proxies will cache the page with it's current count and serve it to clients. The server's counter won't get updated for each page view and the clients won't see an accurate number (or even a consistent one if different clients are accessing the page through different proxies/directly).
+            </li>
+        </ol>
+        <h3>Question 5</h3>
+        <p>A 303 status code means “See Other” (source: <a href="http://tools.ietf.org/html/rfc2616#section-10.3.4">http://tools.ietf.org/html/rfc2616#section-10.3.4</a>. This is considered an authoritative source because the <abbr title="Internet Engineering Task Force">IEFT</abbr> develops and promotoes internet standardsm like <abbr title="HyperText Transfer Protocol">HTTP</abbr> status codes. <abbr title="Internet Assigned Numbers Authority">IANA</abbr> is also an authoritative source in this context because they maintain the official registry of <abbr title="HyperText Transfer Protocol">HTTP</abbr> status codes.</p>
+        <h3>Question 6</h3>
+        <p><abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> types are used to tell other applications the type of data they're receiving. There are many <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> types of type text registered with the <abbr title="Internet Assigned Numbers Authority">IANA</abbr>. The source I used (which includes a full list of the types) can be found here: <a href="http://www.iana.org/assignments/media-types/media-types.xhtml#text">http://www.iana.org/assignments/media-types/media-types.xhtml#text</a>.</p>
+        <h3>Question 7</h3>
+        <p><abbr title="Information technology -- 8-bit single-byte coded graphic character sets -- Part 15: Latin alphabet No. 9">ISO/IEC 8559-15</abbr> and <abbr title="Universal Character Set (UCS) + Transformation Format - 8-bit">UTF-8</abbr> refer to character encoding standards. <abbr title="Universal Character Set (UCS) + Transformation Format - 8-bit">UTF-8</abbr> is a  variable-width encoding that uses 8-bit code units. It is backward-compatible with <abbr title="American Standard Code for Information Interchange">ASCII</abbr> and can encode any Unicode character. This makes <abbr title="Universal Character Set (UCS) + Transformation Format - 8-bit">UTF-8</abbr>-encoded text sometimes larger than necessary. <abbr title="Information technology -- 8-bit single-byte coded graphic character sets -- Part 15: Latin alphabet No. 9">ISO/IEC 8559-15</abbr> is a single-byte character encoding. This keeps encoded text size down to a minimum when working in certain languages. It includes the euro and other characters necessary for certain languages which replace characters that weren't commonly used in <abbr title="Information technology -- 8-bit single-byte coded graphic character sets -- Part 15: Latin alphabet No. 1">ISO/IEC 8559-1</abbr>.</p>
+        <h3>Question 8</h3>
+        <p>A stateless protocol is one where each information exchange is treated independently, meaning that servers do not need to keep records of session information.</p>
+        <ul>
+            <li>
+                Pro
+                <ul>
+                    <li>Makes server design easier (no need to keep track of session states)</li>
+                </ul>
+            </li>
+            <li>
+                Con
+                <ul>
+                    <li>Requires session information to be sent and interpreted every request.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Question 9</h3>
+        <p>Cookies allow the server to maintain a user's session since HTTP does not do that by itself. Without cookies the server would have to maintain a user's session another way. If it's done without cookies in PHP, for example, the session will end if a user closes his browser, which means that he or she would have to start over if they closed it accidentally. This is likely to reduce sales. </p>
+        <h3>Question 10</h3>
+        <p>They do this in order to comply with EU law. This law was adopted to make users more aware of how their browsing information is used. Now users can opt out if they sense that their privacy is being violated.  To uninformed users, this may seem intimidating and cause them to turn away from sites which follow this policy and go to other sites where the issue isn't present. The establishment of an acceptable privacy standards body would improve this situation. Sites would be able to put a badge on their pages indicating to users that they can trust it.</p>
+        <h3>Question 11</h3>
+        <ul>
+            <li>
+                Advantages for server-side
+                <ul>
+                    <li>Faster page load</li>
+                    <li>Users don't need JS enabled</li>
+                </ul>
+            </li>
+            <li>
+                Advantages for client-side
+                <ul>
+                    <li>Takes load off the server</li>
+                    <li>Easier to implement fancy functionality</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Question 12</h3>
+        <p><abbr title="Rich Site Summary">RSS</abbr> is used to publish frequently updated content. It eliminates the need for users to manually check for updates on a particular site. Instead, a user's feed reader will periodically check for updates to the RSS feed of sites that it's subscribed to and inform the user when there is next content. I wouldn't use this feature. I have used it before and it became a hassle to manage feeds as interests developed and waned. It's much easier overall to seek out the information you need at a given moment and leave it at that.</p>
+        <h3>Bonus 1</h3>
+        <p>The <a href="http://few.vu.nl/~pan450/lab3bonus1rsscss.css" title="Lab 3 Bonus 1 CSS file">CSS</a> and <a href="http://few.vu.nl/~pan450/lab3bonus1rsxslt.xsl" title="Lab 3 Bonus 1 XSL file">XSL</a> files can be found at <a href="http://few.vu.nl/~pan450">http://few.vu.nl/~pan450/</a>.</p>
+
+        <h3>Bonus 2</h3>
+        <p>It seems that our suggestion from question 10 has already been done.</p>
+    </section>
+    <section id="lab4">
+        <h2>Lab 4</h2>
+        <h3>Question 1</h3>
+        <h3>Question 2</h3>
+    </section>
+    <section id="table">
+        <h2>Table</h2>
+        <form action="http://wt.ops.few.vu.nl/api/1c803e2a" method="post">
+            <table id="tabled" class="sortable">
+                <caption>Inventory table</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Puchase Date</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody id="tabledbody">
+                </tbody>
+                <tr>
+                    <td>
+                        <input type="text" name="name" required>
+                    </td>
+                    <td>
+                        <input type="text" name="category" required>
+                    </td>
+                    <td>
+                        <input type="number" name="amount" required>
+                    </td>
+                    <td>
+                        <input type="date" name="date" id="datepicker" required>
+                    </td>
+                    <td>
+                        <input type="text" name="location" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="5">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <script type="text/javascript">
+    $( "#datepicker" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+    </script>
+    <section id="song">
+        <h2>Song Lyrics using the pre tag</h2>
+        <pre>&#9835; This is my webpage's song<br />It isn't very long<br />HEY! &#9835;</pre>
+    </section>
+    <script title="sort.js" type="text/javascript">
+    // Written by Antoni Stevenet And Peter Atkinson
+    // selects all rows, dont work with the first + last two rows. so
+    var sortb = document.querySelectorAll('#tabled thead th')
+
+    // className assignment for readability
+    sortb[0].className = "sort0"
+    sortb[1].className = "sort1"
+    sortb[2].className = "sort2"
+    sortb[3].className = "sort3"
+    sortb[4].className = "sort4"
+
+    // assign onclick events
+    for (var ind = 0; ind < 5; ind++) {
+        sortb[ind].onclick = function() {
+            var oldName = this.className
+            reset()
+            if (oldName == "sortUp") this.className = "sortDown"
+                else this.className = "sortUp"
+                    sort()
+                }
+            }
+
+            function reset(index) {
+                [0, 1, 2, 3, 4].forEach(function(ind) {
+                    sortb[ind].className = "sort" + ind
+                })
+            }
+
+            function sort() {
+                var   a = document.querySelector('#tabled .sortUp')
+                , b = document.querySelector('#tabled .sortDown')
+                , table = getTable()
+                , index = getIndex()
+                if (a) {
+                    table.sort(function(x, y) {
+                        if(!isNaN(x[index]) && !isNaN(y[index])) return eval(x[index]) > eval(y[index])
+                            else return x[index].toLowerCase() > y[index].toLowerCase()
+                            })
+                        }
+                        if (b) {
+                            table.sort(function(x, y) {
+                                if(!isNaN(x[index]) && !isNaN(y[index])) return eval(x[index]) <  eval(y[index])
+                                    else return x[index].toLowerCase() < y[index].toLowerCase()
+                                    })
+                                }
+                                write(table)
+                            }
+
+                            function getTable() {
+                                var elems = document.querySelectorAll('#tabled #tabledbody tr')
+                                , table = []
+                                for (var x = 0; x < elems.length; x++) {
+                                    table[x] = []
+                                    for (var y = 0; y < elems[x].querySelectorAll('td').length; y++) {
+                                        table[x][y] = elems[x].querySelectorAll('td')[y].innerHTML
+                                    }
+                                }
+                                return table
+                            }
+
+                            function getIndex() {
+                                var headers = document.querySelectorAll('#tabled thead th')
+                                , index = 0
+                                while (index < 5) {
+                                    if (headers[index].className == "sortUp" || headers[index].className == "sortDown") {
+                                        break
+                                    }
+                                    index++
+                                }
+                                return index
+                            }
+
+                            function write(table) {
+                                var elems = document.querySelectorAll('#tabled #tabledbody tr')
+                                for (var x = 0; x < elems.length; x++) {
+                                    for (var y = 0; y < elems[x].querySelectorAll('td').length; y++) {
+                                        elems[x].querySelectorAll('td')[y].innerHTML = table[x][y]
+                                    }
+                                }
+                            }
+
+    </script>
+    <script type="text/javascript">
+                            // loading the table initially
+                            link = "http://wt.ops.few.vu.nl/api/1c803e2a/"
+
+                            $.getJSON(link, function(data) {
+                                insert(data)
+                            })
+
+                            function insert(data) {
+                                var table = document.getElementById("tabledbody")
+                                for (var x = 0; x < data.length; x++) {
+                                    var row = table.insertRow(table.rows.length)
+                                    row.insertCell(0).innerHTML = data[x].name
+                                    row.insertCell(1).innerHTML = data[x].category
+                                    row.insertCell(2).innerHTML = data[x].amount
+                                    row.insertCell(3).innerHTML = data[x].date
+                                    row.insertCell(4).innerHTML = data[x].location
+                                }
+                            }
+
+    </script>
+    <script  type="text/javascript">
+                            // table manipulation
+                            $("form").submit(function(event) {
+                                event.preventDefault()
+                                var formObj = $(this)
+                                , formURL = formObj.attr("action")
+                                , formData = new FormData(this)
+
+                                $.ajax({
+                                    url: formURL,
+                                    type: 'POST',
+                                    data: formData,
+                                    mimeType: "multipart/form-data",
+                                    contentType: false,
+                                    cache: false,
+                                    processData: false,
+                                    success: function(data, textStatus, jqXHR) {
+                                        console.log(data) //returned api call.
+                                        data = JSON.parse(data)
+                                        $.getJSON(data.URI, function(data) {
+                                            addItemToList(data)
+                                        })
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown) {}
+                                })
+                            })
+
+                            function addItemToList(item) { // from here http://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript
+                                var table = document.getElementById("tabledbody")
+                                ,   row = table.insertRow(table.rows.length)
+                                ,   cell1 = row.insertCell(0).innerHTML = item.name
+                                ,   cell2 = row.insertCell(1).innerHTML = item.category
+                                ,   cell3 = row.insertCell(2).innerHTML = item.amount
+                                ,   cell4 = row.insertCell(3).innerHTML = item.date
+                                ,   cell5 = row.insertCell(4).innerHTML = item.location
+
+                                document.forms[0].reset()
+                            }
+    </script>
+    <script>
+                            // display toggler
+                            function displayToggler(sectionID) {
+                                section = document.getElementById(sectionID);
+                                if (section.style.display == 'none' || section.style.display =='') {
+                                    section.style.display = 'block';
+                                } else {
+                                    section.style.display = 'none';
+                                }
+                            }
+    </script>
+</body>
+</html>
