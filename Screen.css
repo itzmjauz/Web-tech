@@ -40,6 +40,9 @@ section, blockquote {
     margin: 5px;
     padding: 5px
 }
+ol.letters {
+    list-style-type: lower-alpha;
+}
 ul.l1q9 {
     list-style-type: upper-roman;
     list-style-position: outside;
