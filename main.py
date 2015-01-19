@@ -6,9 +6,8 @@ import sqlite3
 #change to liking
 filename = "Inventory.db"
 
-db = sqlite3.connect(filename)
-
 if(not os.path.isfile(filename)):
+    db = sqlite3.connect(filename)
     db.execute("""
         create table inventory 
 	(id integer primary key, 
