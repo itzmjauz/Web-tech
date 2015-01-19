@@ -2,6 +2,7 @@
 <!-- Assignment 1
 Peter Atkinson - 2555678
 Antoni Stevenet - 2557398
+We changed the CSS to hide <section> tags initially, added an <ol> alphabet style and added sorting arrows for our table.
 -->
 <html>
 <head>
@@ -22,7 +23,7 @@ Antoni Stevenet - 2557398
         <a href="#lab3" onclick="displayToggler('lab3')">Lab 3</a>|
         <a href="#lab4" onclick="displayToggler('lab4')">Lab 4</a>|
         <a href="#table" onclick="displayToggler('table')">Table</a>|
-        <a href="#song" onclick="displayToggler('song')">Song Lyrics using the pre tag</a>
+        <a href="#pretag" onclick="displayToggler('pretag')">Pre tag</a>
     </nav>
     <h3>Note</h3>
     <p class="note">Navigation links toggle visibility of sections.</p>
@@ -323,10 +324,10 @@ Antoni Stevenet - 2557398
         <h3>Question 12</h3>
         <p><abbr title="Rich Site Summary">RSS</abbr> is used to publish frequently updated content. It eliminates the need for users to manually check for updates on a particular site. Instead, a user's feed reader will periodically check for updates to the RSS feed of sites that it's subscribed to and inform the user when there is next content. I wouldn't use this feature. I have used it before and it became a hassle to manage feeds as interests developed and waned. It's much easier overall to seek out the information you need at a given moment and leave it at that.</p>
         <h3>Bonus 1</h3>
-        <p>The <a href="http://few.vu.nl/~pan450/lab3bonus1rsscss.css" title="Lab 3 Bonus 1 CSS file">CSS</a> and <a href="http://few.vu.nl/~pan450/lab3bonus1rsxslt.xsl" title="Lab 3 Bonus 1 XSL file">XSL</a> files can be found at <a href="http://few.vu.nl/~pan450">http://few.vu.nl/~pan450/</a>.</p>
+        <p>The <a href="http://few.vu.nl/~pan450/lab3bonus1rsscss.css" title="Lab 3 Bonus 1 CSS file">CSS</a> and <a href="http://few.vu.nl/~pan450/lab3bonus1rsxslt.xsl" title="Lab 3 Bonus 1 XSL file">XSL</a> files as well as a sample <a href="http://few.vu.nl/~pan450/bbrss.xml">RSS feed</a> can be found at <a href="http://few.vu.nl/~pan450">http://few.vu.nl/~pan450/</a>.</p>
 
         <h3>Bonus 2</h3>
-        <p>It seems that our suggestion from question 10 has already been done.</p>
+        <p>It seems that our suggestion from question 10 has already been done to an extent. <abbr title="European Interactive Digital Advertising Alliance">EDAA</abbr> is a group that licenses the <abbr title="Online Behavioural Advertising">OBA</abbr> icon to online advertising companies in Europe. They have a site (<a href="http://youronlinechoices.com">youronlinechoices.com</a>) where users can opt-out of online behavioural advertising from a selection of complying European companies. Adform is a European advertising platform that offers advertisers and users the chance to adjust the privacy settings of their ads, including overlaying advertisements with their icon to adjust privacy settings. These solution only deals with the advertising industry though. There are serveral other avenues that online privacy can be circumvented that haven't been addressed yet, but this is a start.</p>
     </section>
     <section id="lab4">
         <h2>Lab 4</h2>
@@ -393,8 +394,8 @@ Antoni Stevenet - 2557398
         dateFormat: "yy-mm-dd"
     });
     </script>
-    <section id="song">
-        <h2>Song Lyrics using the pre tag</h2>
+    <section id="pretag">
+        <h2>Pre tag</h2>
         <pre>&#9835; This is my webpage's song<br />It isn't very long<br />HEY! &#9835;</pre>
     </section>
     <script title="sort.js" type="text/javascript">
