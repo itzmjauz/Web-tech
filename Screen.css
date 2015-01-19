@@ -5,8 +5,7 @@
  body {
     background-color: #b0c4de;
 }
-//section {
-    /* double slashed for easy toggling */
+section {
     display: none;
 }
 table {
