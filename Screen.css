@@ -112,7 +112,7 @@ img {
     float: left;
     vertical-align: text-top;
 }
-input[type="submit"], input[type="reset"] {
+input[type="submit"], input[type="reset"], input[type="button"] {
     margin: 0 auto;
     width: 49%;
 }
@@ -145,10 +145,9 @@ p {
     content:'Note: ';
 }
 /* Handheld device stuff */
- @media screen and(max-height: 480px) and(max-width: 360px) {
+ @media screen and (max-height: 480px) and (max-width: 360px) { /* for long strings, wide tables etc... */
     body {
         background-color: lightgrey;
         word-break:break-all
-        /* for long strings, wide tables etc... */
     }
 }
