@@ -1,4 +1,5 @@
 import sqlite3
+import json as real_json
 from bottle import route, run, debug, template, request, static_file, error
 
 # only needed when you run Bottle on mod_wsgi
@@ -94,21 +95,37 @@ def help():
   static_file('help.html', root='.')
 
 
+
 @route('/json:json#[0-9]+#')
 def show_json(json):
 
   conn = sqlite3.connect('Inventory.db')
+  conn.row_factory = sqlite3.Row
   c = conn.cursor()
   c.execute(
-      "SELECT name, category, location, date, amount FROM inventory WHERE id LIKE ?", (json))
-  result = c.fetchall()
+      "SELECT * FROM inventory WHERE id LIKE ?", (json))
+  rows = c.fetchall()
   c.close()
 
-  if not result:
+  if not rows:
     return {'item': 'This item number does not exist!'}
   else:
-    return {'item': result[0]}
+    return {'item' : real_json.dumps( [dict(ix) for ix in rows] )}
 
+@route('/json')
+def show_json():
+
+  conn = sqlite3.connect('Inventory.db')
+  conn.row_factory = sqlite3.Row
+  c = conn.cursor()
+  c.execute("SELECT * FROM inventory")
+  rows = c.fetchall()
+  c.close()
+
+  if not rows:
+    return {'Inventory': 'This Inventory is empty!'}
+  else:
+    return {'Inventory' : [dict(ix) for ix in rows] }
 
 @error(403)
 def mistake403(code):
