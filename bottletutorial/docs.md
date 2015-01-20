@@ -1,3 +1,6 @@
-Documentation for inventory.py
+Documentation for inventory
 -----------------------------------
+/inventory
+==================================
+
 

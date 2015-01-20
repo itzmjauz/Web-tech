@@ -5,21 +5,6 @@ from bottle import route, run, debug, template, request, static_file, error
 # only needed when you run Bottle on mod_wsgi
 from bottle import default_app
 
-
-@route('/inventory')
-def todo_list():
-
-  conn = sqlite3.connect('Inventory.db')
-  c = conn.cursor()
-  c.execute(
-      "SELECT id, name, category, location, date, amount FROM inventory")
-  result = c.fetchall()
-  c.close()
-
-  output = template('make_table', rows=result)
-  return output
-
-
 @route('/new', method='GET')
 def new_item():
 
@@ -39,11 +24,7 @@ def new_item():
     conn.commit()
     c.close()
 
-    return '<p>The new task was inserted into the database, the ID is %s</p>' % new_id
-
-  else:
-    return template('new_task.tpl')
-
+    return {'Addition' : 'succes',            'ID' : new_id}
 
 @route('/edit/:no', method='GET')
 def edit_item(no):
@@ -61,40 +42,21 @@ def edit_item(no):
         "UPDATE inventory SET name = ?, category = ?, location = ?, date =?, amount = ? WHERE id LIKE ?", (name, category, location, date, amount, no))
     conn.commit()
 
-    return '<p>The item number %s was successfully updated</p>' % no
+    return {'Update' : 'succes'} 
 
-  else:
-    conn = sqlite3.connect('Inventory.db')
-    c = conn.cursor()
-    c.execute(
-        "SELECT name, category, location, date, amount FROM inventory WHERE id LIKE ?", (str(no)))
-    cur_data = c.fetchone()
+  #else:
+  #  conn = sqlite3.connect('Inventory.db')
+  #  c = conn.cursor()
+  #  c.execute(
+  #      "SELECT name, category, location, date, amount FROM inventory WHERE id LIKE ?", (str(no)))
+  #  cur_data = c.fetchone()
 
-    return template('edit_task', old=cur_data, no=no)
-
-
-@route('/item:item#[0-9]+#')
-def show_item(item):
-
-  conn = sqlite3.connect('Inventory.db')
-  c = conn.cursor()
-  c.execute(
-      "SELECT name, category, location, date, amount FROM inventory WHERE id LIKE ?", (item))
-  result = c.fetchall()
-  c.close()
-
-  if not result:
-    return 'This item number does not exist!'
-  else:
-    return 'Item: %s' % result[0]
-
+  #  return template('edit_task', old=cur_data, no=no)
 
 @route('/help')
 def help():
 
   static_file('help.html', root='.')
-
-
 
 @route('/json:json#[0-9]+#')
 def show_json(json):
@@ -110,10 +72,10 @@ def show_json(json):
   if not rows:
     return {'item': 'This item number does not exist!'}
   else:
-    return {'item' : real_json.dumps( [dict(ix) for ix in rows] )}
+    return {'item' :[dict(ix) for ix in rows]}
 
 @route('/json')
-def show_json():
+def show_json2():
 
   conn = sqlite3.connect('Inventory.db')
   conn.row_factory = sqlite3.Row
