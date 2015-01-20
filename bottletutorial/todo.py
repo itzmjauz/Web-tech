@@ -28,7 +28,6 @@ def new_item():
     location = request.GET.get('location').strip()
     date = request.GET.get('date').strip()
     amount = request.GET.get('amount').strip()
-    new = request.GET.get('task', '').strip()
     conn = sqlite3.connect('Inventory.db')
     c = conn.cursor()
 
@@ -49,26 +48,25 @@ def new_item():
 def edit_item(no):
 
   if request.GET.get('save', '').strip():
-    edit = request.GET.get('task', '').strip()
-    status = request.GET.get('status', '').strip()
+    name = request.GET.get('name').strip()
+    category = request.GET.get('category').strip()
+    location = request.GET.get('location').strip()
+    date = request.GET.get('date').strip()
+    amount = request.GET.get('amount').strip()
 
-    if status == 'open':
-      status = 1
-    else:
-      status = 0
-
-    conn = sqlite3.connect('todo.db')
+    conn = sqlite3.connect('Inventory.db')
     c = conn.cursor()
     c.execute(
-        "UPDATE todo SET task = ?, status = ? WHERE id LIKE ?", (edit, status, no))
+        "UPDATE inventory SET name = ?, category = ?, location = ?, date =?, amount = ? WHERE id LIKE ?", (name, category, location, date, amount, no))
     conn.commit()
 
     return '<p>The item number %s was successfully updated</p>' % no
 
   else:
-    conn = sqlite3.connect('todo.db')
+    conn = sqlite3.connect('Inventory.db')
     c = conn.cursor()
-    c.execute("SELECT task FROM todo WHERE id LIKE ?", (str(no)))
+    c.execute(
+        "SELECT name, category, location, date, amount FROM inventory WHERE id LIKE ?", (str(no)))
     cur_data = c.fetchone()
 
     return template('edit_task', old=cur_data, no=no)
@@ -77,16 +75,17 @@ def edit_item(no):
 @route('/item:item#[0-9]+#')
 def show_item(item):
 
-  conn = sqlite3.connect('todo.db')
+  conn = sqlite3.connect('Inventory.db')
   c = conn.cursor()
-  c.execute("SELECT task FROM todo WHERE id LIKE ?", (item))
+  c.execute(
+      "SELECT name, category, location, date, amount FROM inventory WHERE id LIKE ?", (item))
   result = c.fetchall()
   c.close()
 
   if not result:
     return 'This item number does not exist!'
   else:
-    return 'Task: %s' % result[0]
+    return 'Item: %s' % result[0]
 
 
 @route('/help')
@@ -98,16 +97,17 @@ def help():
 @route('/json:json#[0-9]+#')
 def show_json(json):
 
-  conn = sqlite3.connect('todo.db')
+  conn = sqlite3.connect('Inventory.db')
   c = conn.cursor()
-  c.execute("SELECT task FROM todo WHERE id LIKE ?", (json))
+  c.execute(
+      "SELECT name, category, location, date, amount FROM inventory WHERE id LIKE ?", (json))
   result = c.fetchall()
   c.close()
 
   if not result:
-    return {'task': 'This item number does not exist!'}
+    return {'item': 'This item number does not exist!'}
   else:
-    return {'Task': result[0]}
+    return {'item': result[0]}
 
 
 @error(403)
