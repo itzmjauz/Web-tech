@@ -250,3 +250,9 @@ returns
 ```
 {"Inventory": [{"amount": 15, "date": "2014-10-05", "category": "Fruit", "name": "Banana", "id": 1, "location": "Amsterdam"}]
 ```
+
+###help?
+Try that yourself, 
+```
+curl -X GET 'localhost:8080/help'
+```
