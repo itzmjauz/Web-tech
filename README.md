@@ -12,13 +12,23 @@ The prefered port is ```8080```, you can change this to your liking though.
 
 Creating the table ( same as resetting it )
 -----------------------------------
+The reset functionality resets the table and adds one item to the table
+Value name    |   value
+--------------|-------------
+Name          | Banana
+Category      | Fruit
+Location      | Amsterdam
+Date          | 2014-10-05
+Amount        | 15
+
 ###resource URL:
 ```
 localhost:8080/reset
 ```
 
-###method:
-```
-POST
-```
+###resource information:
+
+method          | POST
+----------------|-----
+response format | JSON
 
