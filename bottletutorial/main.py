@@ -58,9 +58,14 @@ def edit_item(no):
 
   conn = sqlite3.connect('Inventory.db')
   c = conn.cursor()
-  c.execute(
-      "UPDATE inventory SET name = ?, category = ?, location = ?, date =?, amount = ? WHERE id LIKE ?", (name, category, location, date, amount, no))
-  conn.commit()
+  c.execute("SELECT * FROM inventory WHERE id LIKE?", (str(no)))
+  rows = c.fetchall()
+  if rows:
+      return {'Update' : 'Index unavailable'}
+  else:
+    c.execute(
+          "UPDATE inventory SET name = ?, category = ?, location = ?, date =?, amount = ? WHERE id LIKE ?", (name, category, location, date, amount, no))
+    conn.commit()
 
   return {'Update' : 'success'}
 
