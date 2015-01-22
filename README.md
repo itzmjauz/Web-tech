@@ -68,11 +68,21 @@ These Paramters are ALL required for the succesful addition of a new item.
 
 Parameter Name  | Value format 
 ----------------|-----------------
-save            | To submit succesfully just include this name tag
 name            | Alphanumerical characters
 category        | ...
 location        | ...
 date            | Numbers and dashes
 amount          | Numbers only
 
+/edit[no]  => edit item on ID
+-----------------------------------
+
+/help => Show help page
+-----------------------------------
+
+/json[no] => get Item on Id
+-------------------------------------
+
+/json => Get whole Inventory as json
+-------------------------------------
 
