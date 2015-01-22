@@ -14,6 +14,7 @@ Creating the table ( same as resetting it )
 -----------------------------------
 ###resource URL:
 ```localhost:8080/reset```
+
 ###method:
 ```POST```
 
