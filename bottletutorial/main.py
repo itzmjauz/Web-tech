@@ -75,7 +75,7 @@ def delete_item(no):
   conn = sqlite3.connect('Inventory.db')
   c = conn.cursor()
 
-  c.execute("SELECT * FROM inventory WHERE id=?", (str(no)))
+  c.execute("SELECT * FROM inventory WHERE id=?", (int(no)))
   rows = c.fetchall()
   if not rows:
       return {'Update' : 'Index unavailable'}
