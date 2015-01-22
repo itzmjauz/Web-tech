@@ -10,9 +10,10 @@ main.py API Documentation
 In the Documentation we asume the address of the python server is ```localhost```
 The prefered port is ```8080```, you can change this to your liking though.
 
-Creating the table ( same as resetting it )
+/reset => Creating the table ( same as resetting it )
 -----------------------------------
-The reset functionality resets the table and adds one item to the table
+The reset functionality resets the table and adds one item to the ~~empty~~ table.
+It then returns the newly created table in JSON format.
 
 |Value name    |   value|
 |--------------|-------------|
@@ -22,14 +23,56 @@ The reset functionality resets the table and adds one item to the table
 |Date          | 2014-10-05|
 |Amount        | 15|
 
-###resource URL:
+####Resource URL:
 ```
 localhost:8080/reset
 ```
 
-###resource information:
+####Resource information:
 
-method          | POST
+Method          | POST
 ----------------|-----
-response format | JSON
+Response format | JSON
+Parameters      | None
+
+####Parameters
+None
+
+/new => Adding a new item to the table
+-----------------------------------
+The new functionality adds a new item to the table.
+It returns wether the addition was a succes and the added item's ID. 
+
+| Variable    |    Value |
+|-------------|----------|
+|Addition     | Succes   |
+|ID           | index in table |
+
+Note that /new will always return Addition : succes, otherwise it returns nothing. 
+
+####Resource URL:
+```
+localhost:8080/new
+```
+
+####Resource Information:
+
+Method         | POST 
+---------------|-----
+Response format|JSON
+Parameters     | Required
+
+####Parameters
+
+These Paramters are ALL required for the succesful addition of a new item.
+
+Parameter Name  | Value format 
+----------------|-----------------
+save            | To submit succesfully just include this name tag
+name            | Alphanumerical characters
+category        | ...
+location        | ...
+date            | Numbers and dashes
+amount          | Numbers only
+
 
