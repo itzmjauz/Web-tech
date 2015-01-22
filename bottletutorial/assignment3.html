@@ -124,10 +124,10 @@ webpage functionality doesn't work yet
             <input type="submit" value="Do it" name="save">
         </form>
         <h2>Retrieve Row</h2>
-        <form id="retrieveRow" action="http://localhost:8080/json" method="get">
+        <form id="retrieveRow" action="http://localhost:8080/items" method="get">
             <button>Do it</button>
         <h2>Fill Table</h2>
-        <form id="fillTable" action="http://localhost:8080/json" method="get">
+        <form id="fillTable" action="http://localhost:8080/items" method="get">
             <button>Do it</button>
         </form>
 
@@ -193,7 +193,7 @@ webpage functionality doesn't work yet
     </script>
     <script type="text/javascript">
     // loading the table initially
-    link = "http://127.0.0.1:8080/json"
+    link = "http://127.0.0.1:8080/items"
 
     $.getJSON(link, function(data) {
         insert(data)

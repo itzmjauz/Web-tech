@@ -27,42 +27,42 @@ def options():
 
 @route('/new', method='POST')
 def new_item():
+  response.status=201
 
-  if request.POST.get('save', '').strip():
-    name = request.POST.get('name').strip()
-    category = request.POST.get('category').strip()
-    location = request.POST.get('location').strip()
-    date = request.POST.get('date').strip()
-    amount = request.POST.get('amount').strip()
-    conn = sqlite3.connect('Inventory.db')
-    c = conn.cursor()
+  
+  name = request.POST.get('name').strip()
+  category = request.POST.get('category').strip()
+  location = request.POST.get('location').strip()
+  date = request.POST.get('date').strip()
+  amount = request.POST.get('amount').strip()
+  conn = sqlite3.connect('Inventory.db')
+  c = conn.cursor()
 
-    c.execute(
-        "INSERT INTO inventory (name, category, location, date, amount) VALUES (?,?,?,?,?)", (name, category, location, date, amount))
-    new_id = c.lastrowid
+  c.execute(
+      "INSERT INTO inventory (name, category, location, date, amount) VALUES (?,?,?,?,?)", (name, category, location, date, amount))
+  new_id = c.lastrowid
 
-    conn.commit()
-    c.close()
+  conn.commit()
+  c.close()
 
-    return {'Addition' : 'succes',            'ID' : new_id}
+  return {'Addition' : 'succes',            'ID' : new_id}
 
 @route('/edit/:no', method='POST')
 def edit_item(no):
 
-  if request.POST.get('save', '').strip():
-    name = request.POST.get('name').strip()
-    category = request.POST.get('category').strip()
-    location = request.POST.get('location').strip()
-    date = request.POST.get('date').strip()
-    amount = request.POST.get('amount').strip()
+  name = request.POST.get('name').strip()
+  category = request.POST.get('category').strip()
+  location = request.POST.get('location').strip()
+  date = request.POST.get('date').strip()
+  amount = request.POST.get('amount').strip()
 
-    conn = sqlite3.connect('Inventory.db')
-    c = conn.cursor()
-    c.execute(
-        "UPDATE inventory SET name = ?, category = ?, location = ?, date =?, amount = ? WHERE id LIKE ?", (name, category, location, date, amount, no))
-    conn.commit()
+  conn = sqlite3.connect('Inventory.db')
+  c = conn.cursor()
+  c.execute(
+      "UPDATE inventory SET name = ?, category = ?, location = ?, date =?, amount = ? WHERE id LIKE ?", (name, category, location, date, amount, no))
+  conn.commit()
 
-    return {'Update' : 'success'}
+  return {'Update' : 'success'}
 
 @route('/deleterow/:no', method='POST')
 def delete_item(no):
@@ -89,7 +89,7 @@ def help():
 
   return static_file('assignment3.html', root='.')
 
-@route('/json/:json#[0-9]+#')
+@route('/items/:json#[0-9]+#')
 def show_json(json):
 
   conn = sqlite3.connect('Inventory.db')
@@ -101,11 +101,12 @@ def show_json(json):
   c.close()
 
   if not rows:
+    response.status = 204
     return {'item': 'This item number does not exist!'}
   else:
     return {'item' :[dict(ix) for ix in rows]}
 
-@route('/json')
+@route('/items')
 def show_json2():
 
   conn = sqlite3.connect('Inventory.db')
@@ -116,6 +117,7 @@ def show_json2():
   c.close()
 
   if not rows:
+    response.status = 204
     return {'Inventory': 'This Inventory is empty!'}
   else:
     return {'Inventory' : [dict(ix) for ix in rows] }
