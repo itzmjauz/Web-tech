@@ -13,8 +13,12 @@ The prefered port is ```8080```, you can change this to your liking though.
 Creating the table ( same as resetting it )
 -----------------------------------
 ###resource URL:
-```localhost:8080/reset```
+```
+localhost:8080/reset
+```
 
 ###method:
-```POST```
+```
+POST
+```
 
