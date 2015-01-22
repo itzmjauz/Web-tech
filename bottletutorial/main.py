@@ -86,7 +86,7 @@ def delete_item(no):
   return {'Update' : 'success'}
 
   #else:
-  #  conn = sqlite3.connect('Inventory.db')
+ #  conn = sqlite3.connect('Inventory.db')
   #  c = conn.cursor()
   #  c.execute(
   #      "SELECT name, category, location, date, amount FROM inventory WHERE id LIKE ?", (str(no)))
@@ -106,7 +106,7 @@ def show_json(json):
   conn.row_factory = sqlite3.Row
   c = conn.cursor()
   c.execute(
-      "SELECT * FROM inventory WHERE id LIKE ?", (json))
+      "SELECT * FROM inventory WHERE id=?", (json,))
   rows = c.fetchall()
   c.close()
 
