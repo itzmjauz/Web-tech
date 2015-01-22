@@ -191,3 +191,62 @@ Parameters  | None
 
 ####Parameters 
 None
+
+
+
+##Examples
+Some examples using the curl tool
+
+###Getting all the inventory data
+```
+curl -X GET 'localhost:8080/items'
+```
+which returns something like:
+```
+{"Inventory": [{"amount": 15, "date": "2014-10-05", "category": "Fruit", "name": "Banana", "id": 1, "location": "Amsterdam"}]}
+```
+###Getting a single item 
+```
+curl -X GET 'localhost:8080/items/1'
+```
+returns:
+```
+{"item": [{"amount": 15, "date": "2014-10-05", "category": "Fruit", "name": "Banana", "id": 1, "location": "Amsterdam"}]}
+```
+
+###Adding an item
+```
+curl --data 'name=Melon&location=Peru&category=Fruit&date=2015-01-22&amount=15' 'localhost:8080/new'
+```
+returns:
+```
+{"Addition": "succes", "ID": 3}
+```
+Now we can see the table is updated:
+```
+curl -X GET 'localhost:8080/items'
+{"Inventory": [{"amount": 15, "date": "2014-10-05", "category": "Fruit", "name": "Banana", "id": 1, "location": "Amsterdam"}, {"amount": 23, "date": "12-23-1023", "category": "123", "name": "123", "id": 2, "location": "123"}, {"amount": 15, "date": "2015-01-22", "category": "Fruit", "name": "Melon", "id": 3, "location": "Peru"}]}
+```
+
+###Deleting an item
+```
+curl -X POST 'localhost:8080/deleterow/3'
+```
+returns 
+```
+{"Update": "success"}
+```
+And once again we can see the table is updated:
+```
+curl -X GET 'localhost:8080/items'
+{"Inventory": [{"amount": 15, "date": "2014-10-05", "category": "Fruit", "name": "Banana", "id": 1, "location": "Amsterdam"}, {"amount": 23, "date": "12-23-1023", "category": "123", "name": "123", "id": 2, "location": "123"}]}
+```
+
+###Resetting the table
+```
+curl -X POST 'localhost:8080/reset'
+```
+returns
+```
+{"Inventory": [{"amount": 15, "date": "2014-10-05", "category": "Fruit", "name": "Banana", "id": 1, "location": "Amsterdam"}]
+```
