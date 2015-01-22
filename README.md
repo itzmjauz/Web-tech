@@ -76,13 +76,118 @@ amount          | Numbers only
 
 /edit[no]  => edit item on ID
 -----------------------------------
+Edit a specific item selected by ID
+It returns wether the update was a succes. 
+
+| Variable     |  Value |
+|--------------|--------|
+| Update       | Succes/Index unavailable |
+
+####Resource URL:
+```
+localhost:8080/edit/[no]
+```
+where [no] is a valid number 
+
+####Resource Information:
+
+Method | Post
+-------|-----
+Response Format | JSON
+Parameters | Required
+
+####Parameters
+These Paramters are ALL required for succesfully changing an item's values.
+
+Parameter Name  | Value format 
+----------------|-----------------
+name            | Alphanumerical characters
+category        | ...
+location        | ...
+date            | Numbers and dashes
+amount          | Numbers only
 
 /help => Show help page
 -----------------------------------
+Links to the assignment3.html page
 
-/json[no] => get Item on Id
+####Resource URL:
+```
+localhost:8080/help
+```
+
+####Resource Information:
+Method | GET
+-------|-----
+Response format | Static file
+
+/items/[no] => get Item by Id
 -------------------------------------
+Get an item from the database by navigating to items/[no] with [no] being its ID
 
-/json => Get whole Inventory as json
+Variable  |  Value
+----------|----------
+item      | Doesn't exist/its object data
+
+####Resource URL:
+```
+localhost:8080/items/[no]
+```
+With [no] being its ID
+
+####Resource Information
+
+Method | GET
+-------|-----
+Response format | JSON
+Parameters | None
+
+####Parameters
+None
+
+/items => Get whole Inventory as json
 -------------------------------------
+Show the whole inventory
 
+Variable | Value
+---------|-----------
+Inventory | Empty / Its object data
+
+####Resource URL:
+```
+localhost:8080/items
+```
+
+####Resource Information:
+
+Method | GET
+-------|----------
+Response format | JSON
+Parameters  | None 
+
+####Parameters
+None
+
+/deleterow[no] => Delete item instance by ID
+---------------------------------------------
+Delete an item by its ID.
+
+Variable | Value
+---------|-----------
+Update   | Succes/Index unavailable
+
+####Resource URL:
+```
+localhost:8080/deleterow[no]
+```
+where [no] is the item's ID.
+
+####Resource Information
+
+Method  |  POST
+--------|-------
+Response format | JSON
+Parameters  | None
+
+####Parameters 
+None
