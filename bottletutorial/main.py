@@ -76,6 +76,7 @@ def delete_item(no):
   c = conn.cursor()
 
   c.execute("SELECT * FROM inventory WHERE id=?", (str(no)))
+  rows = c.fetchall()
   if not rows:
       return {'Update' : 'Index unavailable'}
   c.execute(
