@@ -10,6 +10,20 @@ main.py API Documentation
 In the Documentation we asume the address of the python server is ```localhost```
 The prefered port is ```8080```, you can change this to your liking though.
 
+
+Error Codes
+----------------------------------
+####401
+Access denied. You shouldn't be trying whatever you are trying.
+####403
+There's something wrong with your URL.
+####404
+The page doesn't exist.
+####405
+You're using the wrong method to access this functionality of the API.
+You might also be browsing to the wrong URL, so double check!
+
+
 /reset => Creating the table ( same as resetting it )
 -----------------------------------
 The reset functionality resets the table and adds one item to the ~~empty~~ table.

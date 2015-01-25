@@ -180,11 +180,17 @@ def reset():
 def mistake403(code):
   return 'There is a mistake in your url!'
 
+@error(401)
+def mistake401(code):
+  return 'Sorry, acces denied!'
 
 @error(404)
 def mistake404(code):
   return 'Sorry, this page does not exist!'
 
+@error(405)
+def mistake405(code):
+  return 'Sorry, this method is not allowed!'
 
 debug(True)
 run(reloader=True, port=8080)
