@@ -47,7 +47,7 @@ def new_item():
 
   return {'Addition' : 'succes',            'ID' : new_id}
 
-@route('/edit/:no', method='POST')
+@route('/edit/:no', method='PUT')
 def edit_item(no):
 
   name = request.POST.get('name').strip()
@@ -69,7 +69,7 @@ def edit_item(no):
 
   return {'Update' : 'success'}
 
-@route('/deleterow/:no', method='POST')
+@route('/deleterow/:no', method='DELETE')
 def delete_item(no):
 
   conn = sqlite3.connect('Inventory.db')
@@ -94,12 +94,12 @@ def delete_item(no):
 
   #  return template('edit_task', old=cur_data, no=no)
 
-@route('/help')
+@route('/help', method='GET')
 def help():
 
   return static_file('assignment3.html', root='.')
 
-@route('/items/:json#[0-9]+#')
+@route('/items/:json#[0-9]+#', method='GET')
 def show_json(json):
 
   conn = sqlite3.connect('Inventory.db')
@@ -116,7 +116,7 @@ def show_json(json):
   else:
     return {'item' :[dict(ix) for ix in rows]}
 
-@route('/items')
+@route('/items', method='GET')
 def show_json2():
 
   conn = sqlite3.connect('Inventory.db')
@@ -134,7 +134,7 @@ def show_json2():
 
 
 
-@route('/reset', method='POST')
+@route('/reset', method='PUT')
 def reset():
 
   db = sqlite3.connect('Inventory.db') # Warning: This file is created in the current directory
