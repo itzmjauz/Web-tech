@@ -4,10 +4,6 @@ import sqlite3
 
 db = sqlite3.connect('Inventory.db') # Warning: This file is created in the current directory
 
-db.execute("""
-DROP TABLE inventory
-""")
-
 # create table
 db.execute("""
 CREATE TABLE inventory
