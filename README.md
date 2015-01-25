@@ -30,7 +30,7 @@ localhost:8080/reset
 
 ####Resource information:
 
-Method          | POST
+Method          | PUT
 ----------------|-----
 Response format | JSON
 Parameters      | None
@@ -91,7 +91,7 @@ where [no] is a valid number
 
 ####Resource Information:
 
-Method | Post
+Method | PUT
 -------|-----
 Response Format | JSON
 Parameters | Required
@@ -184,7 +184,7 @@ where [no] is the item's ID.
 
 ####Resource Information
 
-Method  |  POST
+Method  |  DELETE
 --------|-------
 Response format | JSON
 Parameters  | None
@@ -230,7 +230,7 @@ curl -X GET 'localhost:8080/items'
 
 ###Deleting an item
 ```
-curl -X POST 'localhost:8080/deleterow/3'
+curl -X DELETE 'localhost:8080/deleterow/3'
 ```
 returns 
 ```
@@ -244,11 +244,19 @@ curl -X GET 'localhost:8080/items'
 
 ###Resetting the table
 ```
-curl -X POST 'localhost:8080/reset'
+curl -X PUT 'localhost:8080/reset'
 ```
 returns
 ```
 {"Inventory": [{"amount": 15, "date": "2014-10-05", "category": "Fruit", "name": "Banana", "id": 1, "location": "Amsterdam"}]
+```
+###Editing an item
+```
+curl -X PUT --data 'name=Melon&location=Peru&category=Fruit&date=2015-01-22&amount=25' 'localhost:8080/edit/2'
+```
+returns
+```
+{"Update": "success"}
 ```
 
 ###help?
