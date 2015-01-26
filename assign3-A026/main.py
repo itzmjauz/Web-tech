@@ -60,14 +60,16 @@ def edit_item(no):
   c.execute("SELECT * FROM inventory WHERE id=?", (no,))
   rows = c.fetchall()
   if not rows:
+      response.status= 404
       return {'Update' : 'Index unavailable'}
   else:
     c.execute(
           "UPDATE inventory SET name = ?, category = ?, location = ?, date =?, amount = ? WHERE id LIKE ?", (name, category, location, date, amount, no))
     conn.commit()
 
-  #409 Response doesn't apply here because our API is too simple for it 
+  
   return {'Update' : 'success'}
+  #409 Response doesn't apply to this route because our API is too simple for it 
 
 @route('/deleterow/:no', method='DELETE')
 def delete_item(no):
@@ -78,14 +80,14 @@ def delete_item(no):
   c.execute("SELECT * FROM inventory WHERE id=?", (no,))
   rows = c.fetchall()
   if not rows:
+      response.status = 404
       return {'Update' : 'Index unavailable'}
   c.execute(
       "DELETE FROM inventory WHERE id=?", (no,))
   conn.commit()
 
   response.status = 204
-  #
-  return {'Update' : 'success'}
+  #return {'Update' : 'success'}
 
 @route('/help', method='GET')
 def help():
@@ -127,7 +129,7 @@ def show_json2():
 
 
 
-@route('/reset', method='PUT')
+@route('/reset', method='DELETE')
 def reset():
 
   db = sqlite3.connect('Inventory.db') # Warning: This file is created in the current directory
@@ -166,11 +168,10 @@ def reset():
 
   if not rows:
     response.status = 500
-    return {'Inventory': 'Not sure what happened; table might be broken!'}
+    return {'Inventory': 'Not sure what happened; database might be broken!'}
   else:
-    response.status = 200
-    #We would return 204 No Content as that's a common response to a DELETE but since we return the new table we return code 200 since there is, in fact, content in our response
-    return {'Inventory' : [dict(ix) for ix in rows] }
+    response.status = 204
+    #return {'Inventory' : [dict(ix) for ix in rows] }
 
 @error(403)
 def mistake403(code):
@@ -188,7 +189,7 @@ def mistake404(code):
 def mistake405(code):
   return 'Sorry, this method is not allowed!'
 
-  @error(500)
+@error(500)
 def mistake500(code):
   return 'Internal Server Error!'
 

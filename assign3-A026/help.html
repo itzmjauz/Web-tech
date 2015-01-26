@@ -19,13 +19,12 @@ The prefered port is <code>8080</code>, you can change this to your liking thoug
 <h4 id="403">403</h4>
 <p>There&#39;s something wrong with your URL.</p>
 <h4 id="404">404</h4>
-<p>The page doesn&#39;t exist.</p>
+<p>The resource doesn&#39;t exist.</p>
 <h4 id="405">405</h4>
 <p>You&#39;re using the wrong method to access this functionality of the API.
 You might also be browsing to the wrong URL, so double check!</p>
-<h2 id="-reset-creating-the-table-same-as-resetting-it-">/reset =&gt; Creating the table ( same as resetting it )</h2>
-<p>The reset functionality resets the table and adds one item to the <del>empty</del> table.
-It then returns the newly created table in JSON format.</p>
+<h2 id="-reset-creating-the-table-same-as-resetting-it-">/reset =&gt; Delete all entires and restore table to it's initial state</h2>
+<p>The reset functionality restores the table to it's initial state</p>
 <table>
 <thead>
 <tr>
@@ -63,13 +62,13 @@ It then returns the newly created table in JSON format.</p>
 <thead>
 <tr>
 <th>Method</th>
-<th>PUT</th>
+<th>DELETE</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Response format</td>
-<td>JSON</td>
+<td>Response</td>
+<td>code 204</td>
 </tr>
 <tr>
 <td>Parameters</td>
@@ -156,7 +155,7 @@ It returns wether the addition was a succes and the added item&#39;s ID. </p>
 </table>
 <h2 id="-edit-no-edit-item-on-id">/edit[no]  =&gt; edit item on ID</h2>
 <p>Edit a specific item selected by ID
-It returns wether the update was a succes. </p>
+It returns wether the update was a success. </p>
 <table>
 <thead>
 <tr>
@@ -323,7 +322,7 @@ It returns wether the update was a succes. </p>
 </table>
 <h4 id="parameters">Parameters</h4>
 <p>None</p>
-<h2 id="-deleterow-no-delete-item-instance-by-id">/deleterow[no] =&gt; Delete item instance by ID</h2>
+<h2 id="-deleterow-no-delete-item-instance-by-id">/deleterow/[no] =&gt; Delete item instance by ID</h2>
 <p>Delete an item by its ID.</p>
 <table>
 <thead>
@@ -340,7 +339,7 @@ It returns wether the update was a succes. </p>
 </tbody>
 </table>
 <h4 id="resource-url-">Resource URL:</h4>
-<pre><code>localhost:8080/deleterow[no]
+<pre><code>localhost:8080/deleterow/[no]
 </code></pre><p>where [no] is the item&#39;s ID.</p>
 <h4 id="resource-information">Resource Information</h4>
 <table>
@@ -352,8 +351,8 @@ It returns wether the update was a succes. </p>
 </thead>
 <tbody>
 <tr>
-<td>Response format</td>
-<td>JSON</td>
+<td>Response</td>
+<td>code 204</td>
 </tr>
 <tr>
 <td>Parameters</td>
@@ -382,14 +381,13 @@ It returns wether the update was a succes. </p>
 {&quot;Inventory&quot;: [{&quot;amount&quot;: 15, &quot;date&quot;: &quot;2014-10-05&quot;, &quot;category&quot;: &quot;Fruit&quot;, &quot;name&quot;: &quot;Banana&quot;, &quot;id&quot;: 1, &quot;location&quot;: &quot;Amsterdam&quot;}, {&quot;amount&quot;: 23, &quot;date&quot;: &quot;12-23-1023&quot;, &quot;category&quot;: &quot;123&quot;, &quot;name&quot;: &quot;123&quot;, &quot;id&quot;: 2, &quot;location&quot;: &quot;123&quot;}, {&quot;amount&quot;: 15, &quot;date&quot;: &quot;2015-01-22&quot;, &quot;category&quot;: &quot;Fruit&quot;, &quot;name&quot;: &quot;Melon&quot;, &quot;id&quot;: 3, &quot;location&quot;: &quot;Peru&quot;}]}
 </code></pre><h3 id="deleting-an-item">Deleting an item</h3>
 <pre><code>curl -X DELETE &#39;localhost:8080/deleterow/3&#39;
-</code></pre><p>returns </p>
-<pre><code>{&quot;Update&quot;: &quot;success&quot;}
-</code></pre><p>And once again we can see the table is updated:</p>
+</code></pre><p>returns code 204</p>
+<p>And once again we can see the table is updated:</p>
 <pre><code>curl -X GET &#39;localhost:8080/items&#39;
 {&quot;Inventory&quot;: [{&quot;amount&quot;: 15, &quot;date&quot;: &quot;2014-10-05&quot;, &quot;category&quot;: &quot;Fruit&quot;, &quot;name&quot;: &quot;Banana&quot;, &quot;id&quot;: 1, &quot;location&quot;: &quot;Amsterdam&quot;}, {&quot;amount&quot;: 23, &quot;date&quot;: &quot;12-23-1023&quot;, &quot;category&quot;: &quot;123&quot;, &quot;name&quot;: &quot;123&quot;, &quot;id&quot;: 2, &quot;location&quot;: &quot;123&quot;}]}
 </code></pre><h3 id="resetting-the-table">Resetting the table</h3>
-<pre><code>curl -X PUT &#39;localhost:8080/reset&#39;
-</code></pre><p>returns</p>
+<pre><code>curl -X DELETE &#39;localhost:8080/reset&#39;
+</code></pre><p>returns code 204 and resets the table to it's original state when it was initially created:</p>
 <pre><code>{&quot;Inventory&quot;: [{&quot;amount&quot;: 15, &quot;date&quot;: &quot;2014-10-05&quot;, &quot;category&quot;: &quot;Fruit&quot;, &quot;name&quot;: &quot;Banana&quot;, &quot;id&quot;: 1, &quot;location&quot;: &quot;Amsterdam&quot;}]
 </code></pre><h3 id="editing-an-item">Editing an item</h3>
 <pre><code>curl -X PUT --data &#39;name=Melon&amp;location=Peru&amp;category=Fruit&amp;date=2015-01-22&amp;amount=25&#39; &#39;localhost:8080/edit/2&#39;
