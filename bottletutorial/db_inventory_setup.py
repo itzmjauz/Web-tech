@@ -2,7 +2,7 @@
 
 import sqlite3
 
-db = sqlite3.connect('inventory.db') # Warning: This file is created in the current directory
+db = sqlite3.connect('Inventory.db') # Warning: This file is created in the current directory
 
 db.execute("""
 CREATE TABLE inventory 
